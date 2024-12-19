@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 module UCIE_ctl_CNTL_FSM_tb ();	
-import shared_pkg::*;
+import UCIE_ctl_shared_pkg::*;
 
 
 	parameter clk_period=10;
@@ -63,9 +63,6 @@ import shared_pkg::*;
 					REQS_REQR_RSPS_RSPR,
 					WAITRX_LPSTATEREQ_ACTIVE_REQS_RSPR_REQR_RSPS} e_mode;
 
-	logic IS_NOP_SENT_temp=0;
-	logic IS_NOP_SENT=0;
-	int error_count=0;
 
 	e_status 		o_fdi_pl_state_sts;
 
@@ -181,7 +178,7 @@ import shared_pkg::*;
 		// here we assume after global reset by 2 cycles phy finished training and pl_inband_pres asserted
 		if(protocol_trigger_entry==1) begin
 
-			$display("Active entry from remote die partner started \n");
+			$display("[%0t] ************************************************** ACTIVE Entry from Remote Die Partner Started **************************************************\n", $time());
 
 			i_fdi_lp_state_req = NOP_REQ;
 
@@ -191,7 +188,7 @@ import shared_pkg::*;
 
 		end
 		else begin
-			$display("Active entry from Reset started \n");
+			$display("[%0t] ******************************************************** ACTIVE Entry from Reset Started *********************************************************\n", $time());
 			i_rdi_pl_inband_pres=1;
 		end
 
@@ -205,7 +202,7 @@ import shared_pkg::*;
 
 		if ( (o_fdi_pl_state_sts==RESET_STS ) && i_rdi_pl_inband_pres) begin
 			if (o_rdi_lp_state_req 	!=  ACTIVE_REQ ) begin
-				$display("ERROR IN ADAPTER IN STATE REQ_ACTIVE_ON_PHY o_rdi_lp_state_req=active must be asserted");
+				$display("[%0t] ERROR IN ADAPTER IN STATE REQ_ACTIVE_ON_PHY o_rdi_lp_state_req=active must be asserted", $time());
 				$stop;
 			end
 		end
@@ -213,7 +210,7 @@ import shared_pkg::*;
 		else  begin
 
 			if (o_rdi_lp_state_req 	!=  NOP_REQ ) begin
-				$display("ERROR IN ADAPTER IN STATE REQ_ACTIVE_ON_PHY o_rdi_lp_state_req=NOP_REQ must be asserted");
+				$display("[%0t] ERROR IN ADAPTER IN STATE REQ_ACTIVE_ON_PHY o_rdi_lp_state_req=NOP_REQ must be asserted", $time());
 				$stop;
 			end
 			
@@ -221,7 +218,7 @@ import shared_pkg::*;
 			@(negedge i_clk);
 
 			if (o_rdi_lp_state_req 	!=  ACTIVE_REQ ) begin
-				$display("ERROR IN ADAPTER IN STATE REQ_ACTIVE_ON_PHY o_rdi_lp_state_req=ACTIVE_REQ must be asserted");
+				$display("[%0t] ERROR IN ADAPTER IN STATE REQ_ACTIVE_ON_PHY o_rdi_lp_state_req=ACTIVE_REQ must be asserted", $time());
 				$stop;
 			end
 
@@ -245,7 +242,7 @@ import shared_pkg::*;
 			busy_trigger();
 
 			if (o_rdi_lp_sb_decode 	!=  SB_ADV_CAP_ADAPTER ||  o_valid_lp_sb !=1 || o_rdi_lp_adv_cap_val != i_CSR_ADVCAP ) begin
-				$display("ERROR IN ADAPTER IN ADV_CAP STATE ");
+				$display("[%0t] ERROR IN ADAPTER IN ADV_CAP STATE ", $time());
 			end
 
 
@@ -260,7 +257,7 @@ import shared_pkg::*;
 				begin
 					@(negedge i_clk) ;
 					if (o_fdi_pl_inband_pres 	!=  1 ) begin
-						$display("ERROR IN PARAMETER NEGOTIATION DONE STATE");
+						$display("[%0t] ERROR IN PARAMETER NEGOTIATION DONE STATE", $time());
 						$stop;
 					end
 				end
@@ -290,7 +287,7 @@ import shared_pkg::*;
 			busy_trigger();
  
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_REQ_ACTIVE || !o_valid_lp_sb  ) begin
-				$display("ERROR IN SEND SB ACTIVE REQ  STATE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE REQ  STATE", $time());
 				$stop;
 			end
 
@@ -304,7 +301,7 @@ import shared_pkg::*;
 			
 			@(negedge i_clk);
 			if (DUT.TX_done_flag != 1 ) begin
-				$display("ERROR IN SB ACTIVE RSP RECEIVED STATE ");
+				$display("[%0t] ERROR IN SB ACTIVE RSP RECEIVED STATE ", $time());
 				$stop;
 			end
 
@@ -321,7 +318,7 @@ import shared_pkg::*;
 
 			if (!o_fdi_pl_rx_active_req) begin
 
-				$display("ERROR IN OPEN RX STATE");
+				$display("[%0t] ERROR IN OPEN RX STATE", $time());
 				$stop;
 
 			end
@@ -336,7 +333,7 @@ import shared_pkg::*;
 
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_RSP_ACTIVE || !o_valid_lp_sb || !DUT.RX_done_flag ) begin
 
-				$display("ERROR IN SEND SB ACTIVE RESPONSE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE RESPONSE", $time());
 				$stop;
 
 			end
@@ -366,7 +363,7 @@ import shared_pkg::*;
 
 			if (!o_fdi_pl_rx_active_req) begin
 
-				$display("ERROR IN OPEN RX STATE");
+				$display("[%0t] ERROR IN OPEN RX STATE", $time());
 				$stop;
 
 			end
@@ -381,7 +378,7 @@ import shared_pkg::*;
 
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_RSP_ACTIVE || !o_valid_lp_sb || !DUT.RX_done_flag ) begin
 
-				$display("ERROR IN SEND SB ACTIVE RESPONSE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE RESPONSE", $time());
 				$stop;
 
 			end
@@ -400,7 +397,7 @@ import shared_pkg::*;
 			busy_trigger();
 			
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_REQ_ACTIVE || !o_valid_lp_sb  ) begin
-				$display("ERROR IN SEND SB ACTIVE REQ  STATE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE REQ  STATE", $time());
 				$stop;
 			end
 
@@ -417,7 +414,7 @@ import shared_pkg::*;
 
 			//here we will go to SB ACTIVE RESPONSE RECEIVED
 			if (DUT.TX_done_flag != 1 ) begin
-				$display("ERROR IN SB ACTIVE RSP RECEIVED STATE ");
+				$display("[%0t] ERROR IN SB ACTIVE RSP RECEIVED STATE ", $time());
 				$stop;
 			end
 
@@ -437,7 +434,7 @@ import shared_pkg::*;
 			busy_trigger();
 
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_REQ_ACTIVE || !o_valid_lp_sb  ) begin
-				$display("ERROR IN SEND SB ACTIVE REQ  STATE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE REQ  STATE", $time());
 				$stop;
 			end
 
@@ -453,7 +450,7 @@ import shared_pkg::*;
 
 			if (!o_fdi_pl_rx_active_req) begin
 
-				$display("ERROR IN OPEN RX STATE");
+				$display("[%0t] ERROR IN OPEN RX STATE", $time());
 				$stop;
 
 			end
@@ -468,7 +465,7 @@ import shared_pkg::*;
 			busy_trigger();
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_RSP_ACTIVE || !o_valid_lp_sb || !DUT.RX_done_flag ) begin
 
-				$display("ERROR IN SEND SB ACTIVE RESPONSE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE RESPONSE", $time());
 				$stop;
 
 			end
@@ -486,7 +483,7 @@ import shared_pkg::*;
 
 			//here we will go to SB ACTIVE RESPONSE RECEIVED
 			if (DUT.TX_done_flag != 1 ) begin
-				$display("ERROR IN SB ACTIVE RSP RECEIVED STATE ");
+				$display("[%0t] ERROR IN SB ACTIVE RSP RECEIVED STATE ", $time());
 				$stop;
 			end
 			@(negedge i_clk);
@@ -506,7 +503,7 @@ import shared_pkg::*;
 		
 			busy_trigger();
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_REQ_ACTIVE || !o_valid_lp_sb  ) begin
-				$display("ERROR IN SEND SB ACTIVE REQ  STATE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE REQ  STATE", $time());
 				$stop;
 			end
 
@@ -519,7 +516,7 @@ import shared_pkg::*;
 			@(negedge i_clk);
 			//here we will go to SB ACTIVE RESPONSE RECEIVED
 			if (DUT.TX_done_flag != 1 ) begin
-				$display("ERROR IN SB ACTIVE RSP RECEIVED STATE ");
+				$display("[%0t] ERROR IN SB ACTIVE RSP RECEIVED STATE ", $time());
 				$stop;
 			end
 
@@ -536,7 +533,7 @@ import shared_pkg::*;
 
 			if (!o_fdi_pl_rx_active_req) begin
 
-				$display("ERROR IN OPEN RX STATE");
+				$display("[%0t] ERROR IN OPEN RX STATE", $time());
 				$stop;
 
 			end
@@ -549,7 +546,7 @@ import shared_pkg::*;
 			busy_trigger();
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_RSP_ACTIVE || !o_valid_lp_sb || !DUT.RX_done_flag ) begin
 
-				$display("ERROR IN SEND SB ACTIVE RESPONSE");
+				$display("[%0t] ERROR IN SEND SB ACTIVE RESPONSE", $time());
 				$stop;
 
 			end
@@ -559,15 +556,14 @@ import shared_pkg::*;
 
 
 
-		$display("time=%t",$time);
 		if (o_fdi_pl_state_sts != ACTIVE_STS  || !o_fdi_pl_protocol_vld ) begin
 
-				$display("ERROR IN  ACTIVE STATE");
+				$display("[%0t] ERROR IN  ACTIVE STATE", $time());
 				$stop;
 
 		end
 
-		$display("************** ACTIVE ENTRY DONE ******************************");
+		$display("[%0t] ******************************************************* Successfully Entered ACTIVE State ********************************************************\n", $time());
 
 	 	 @(negedge i_clk);
 
@@ -607,21 +603,23 @@ import shared_pkg::*;
 	task global_reset();
 		initialize_inputs();
 
-		$display("************* Reset Asserted ***************** ");
-
+		$display("[%0t] ***************************************************************** Reset Asserted *****************************************************************\n", $time());
+		
 		i_rst_n=0;
 
 		repeat (5) @(negedge i_clk);
 
 		i_rst_n=1;
 
-		$display("************* Reset Deasserted ************** ");
-
+		$display("[%0t] **************************************************************** Reset Deasserted ****************************************************************\n", $time());
+		
 	endtask
 
 
 	// Tasks
 	task enter_linkerror_trigger_protocol;
+		$display("[%0t] ************************************************** LINKERROR Entry from Protocol Layer Started ***************************************************\n", $time());
+
 		i_fdi_lp_linkerror = 1;
 		i_rdi_pl_state_sts = o_fdi_pl_state_sts;		// Assuming Stable State (Adapter State = Phy State)
 		i_overflow_RX 		= 0;
@@ -630,13 +628,13 @@ import shared_pkg::*;
 
 		@(negedge i_clk);
 		if (o_rdi_lp_linkerror != 1) begin
-			$display("ERROR - LINKERROR_ENTRY - Trigger: Protocol Layer - i_fdi_lp_linkerror = 1\n
-						Adapter did not forward lp_linkerror to Phy --- o_rdi_lp_linkerror = %0d, should = 1", o_rdi_lp_linkerror);
+			$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: Protocol Layer - i_fdi_lp_linkerror = 1", $time());
+			$display("Adapter did not forward lp_linkerror to Phy --- o_rdi_lp_linkerror = %0d, should = 1", o_rdi_lp_linkerror);
 			$stop();
 		end
 		if (o_fdi_pl_state_sts == LINKERROR_STS) begin
-			$display("ERROR - LINKERROR_ENTRY - Trigger: Protocol Layer - i_fdi_lp_linkerror = 1\n
-						Adapter should wait for Phy Status (LINKERROR_STS) before transitioning to LINKERROR");
+			$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: Protocol Layer - i_fdi_lp_linkerror = 1", $time());
+			$display("Adapter should wait for Phy Status (LINKERROR_STS) before transitioning to LINKERROR");
 			$stop();
 		end
 
@@ -648,12 +646,13 @@ import shared_pkg::*;
 			@(negedge i_clk);
 
 			if (o_fdi_pl_state_sts != LINKERROR_STS) begin
-				$display("ERROR - LINKERROR_ENTRY - Trigger: Protocol Layer - i_rdi_pl_state_sts = LINKERROR_STS\n
-							Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = 1", o_fdi_pl_state_sts);
+				$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: Protocol Layer - i_rdi_pl_state_sts = LINKERROR_STS", $time());
+				$display("Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = 1", o_fdi_pl_state_sts);
 
 				$stop();
 			end
-			$display("enter_linkerror_trigger_protocol done ");
+			$display("[%0t] ***************************************************** Successfully Entered LINKERROR State *******************************************************\n", $time());
+
 		end
 
 	endtask : enter_linkerror_trigger_protocol
@@ -661,6 +660,8 @@ import shared_pkg::*;
 
 	// The following two tasks should be used when DUT is in Active State
 	task enter_linkerror_trigger_TX;
+		$display("[%0t] ************************************************** LINKERROR Entry due to TX Overflow Started ****************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_RX 		= 0;
 		i_overflow_TX 		= 1;
@@ -672,13 +673,13 @@ import shared_pkg::*;
 		@(negedge i_clk);
 		if (o_fdi_pl_state_sts == ACTIVE_STS) begin
 			if (o_rdi_lp_linkerror != 1) begin
-				$display("ERROR - LINKERROR_ENTRY - Trigger: TX Overflow - i_overflow_TX = 1\n
-							Adapter did not forward lp_linkerror to Phy --- o_rdi_lp_linkerror = %0d, should = 1", o_rdi_lp_linkerror);
+				$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: TX Overflow - i_overflow_TX = 1", $time());
+				$display("Adapter did not forward lp_linkerror to Phy --- o_rdi_lp_linkerror = %0d, should = 1", o_rdi_lp_linkerror);
 				$stop();
 			end
 			if (o_fdi_pl_state_sts == LINKERROR_STS) begin
-				$display("ERROR - LINKERROR_ENTRY - Trigger: TX Overflow - i_overflow_TX = 1\n
-							Adapter should wait for Phy Status (LINKERROR_STS) before transitioning to LINKERROR");
+				$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: TX Overflow - i_overflow_TX = 1", $time());
+				$display("Adapter should wait for Phy Status (LINKERROR_STS) before transitioning to LINKERROR");
 				$stop();
 			end
 
@@ -690,11 +691,14 @@ import shared_pkg::*;
 				@(negedge i_clk);
 
 				if (o_fdi_pl_state_sts != LINKERROR_STS) begin
-					$display("ERROR - LINKERROR_ENTRY - Trigger: TX Overflow - i_rdi_pl_state_sts = LINKERROR_STS\n
-								Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = 1", o_fdi_pl_state_sts);
+					$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: TX Overflow - i_rdi_pl_state_sts = LINKERROR_STS", $time());
+					$display("Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = 1", o_fdi_pl_state_sts);
 
 					$stop();
 				end
+
+				$display("[%0t] ***************************************************** Successfully Entered LINKERROR State *******************************************************\n", $time());
+
 			end
 		end
 	endtask : enter_linkerror_trigger_TX
@@ -703,6 +707,8 @@ import shared_pkg::*;
 
 
 	task enter_linkerror_trigger_RX;
+		$display("[%0t] ************************************************** LINKERROR Entry due to RX Overflow Started ****************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 1;
@@ -714,13 +720,13 @@ import shared_pkg::*;
 		@(negedge i_clk);
 		if (o_fdi_pl_state_sts == ACTIVE_STS) begin
 			if (o_rdi_lp_linkerror != 1) begin
-				$display("ERROR - LINKERROR_ENTRY - Trigger: RX Overflow - i_overflow_RX = 1\n
-							Adapter did not forward lp_linkerror to Phy --- o_rdi_lp_linkerror = %0d, should = 1", o_rdi_lp_linkerror);
+				$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: RX Overflow - i_overflow_RX = 1", $time());
+				$display("Adapter did not forward lp_linkerror to Phy --- o_rdi_lp_linkerror = %0d, should = 1", o_rdi_lp_linkerror);
 				$stop();
 			end
 			if (o_fdi_pl_state_sts == LINKERROR_STS) begin
-				$display("ERROR - LINKERROR_ENTRY - Trigger: RX Overflow - i_overflow_RX = 1\n
-							Adapter should wait for Phy Status (LINKERROR_STS) before transitioning to LINKERROR");
+				$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: RX Overflow - i_overflow_RX = 1", $time());
+				$display("Adapter should wait for Phy Status (LINKERROR_STS) before transitioning to LINKERROR");
 				$stop();
 			end
 			
@@ -732,11 +738,13 @@ import shared_pkg::*;
 				@(negedge i_clk);
 
 				if (o_fdi_pl_state_sts != LINKERROR_STS) begin
-					$display("ERROR - LINKERROR_ENTRY - Trigger: RX Overflow - i_rdi_pl_state_sts = LINKERROR_STS\n
-								Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = LINKERROR_STS", o_fdi_pl_state_sts);
+					$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: RX Overflow - i_rdi_pl_state_sts = LINKERROR_STS", $time());
+					$display("Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = LINKERROR_STS", o_fdi_pl_state_sts);
 
 					$stop();
 				end
+
+				$display("[%0t] ***************************************************** Successfully Entered LINKERROR State *******************************************************\n", $time());
 
 			end
 		end
@@ -745,6 +753,8 @@ import shared_pkg::*;
 
 
 	task enter_linkerror_trigger_PHY;
+		$display("[%0t] ************************************************** LINKERROR Entry from Physical Layer Started ***************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -753,12 +763,13 @@ import shared_pkg::*;
 
 		@(negedge i_clk);
 		if (o_fdi_pl_state_sts != LINKERROR_STS) begin
-			$display("ERROR - LINKERROR_ENTRY - Trigger: Physical Layer - i_rdi_pl_state_sts = LINKERROR_STS\n
-						Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = LINKERROR_STS", o_fdi_pl_state_sts);
+			$display("[%0t] ERROR - LINKERROR_ENTRY - Trigger: Physical Layer - i_rdi_pl_state_sts = LINKERROR_STS", $time());
+			$display("Adapter did not transition to LINKERROR --- o_fdi_pl_state_sts = %s, should = LINKERROR_STS", o_fdi_pl_state_sts);
 
 			$stop();
 		end
-		$display("****** enter_linkerror_trigger_PHY DONE ********************");
+		else
+			$display("[%0t] ***************************************************** Successfully Entered LINKERROR State *******************************************************\n", $time());
 
 	endtask : enter_linkerror_trigger_PHY
 
@@ -767,6 +778,8 @@ import shared_pkg::*;
 
 
 	task enter_linkreset_trigger_protocol;
+		$display("[%0t] ************************************************** LINKRESET Entry from Protocol Layer Started ***************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -784,53 +797,52 @@ import shared_pkg::*;
 		end
 
 		@(negedge i_clk);
+		if (i_rdi_pl_state_sts != LINKERROR_STS) begin
+			busy_trigger();
 
-		busy_trigger();
+			if (o_rdi_lp_sb_decode != SB_ADAPTER_REQ_LINKRESET) begin
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ", $time());
+				$display("Adapter did not send LINKRESET_REQ SB MSG --- o_rdi_lp_sb_decode = %s, should = SB_ADAPTER_REQ_LINKRESET", o_rdi_lp_sb_decode);
 
-		if (o_rdi_lp_sb_decode != SB_ADAPTER_REQ_LINKRESET) begin
-			$display("ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ\n
-						Adapter did not send LINKRESET_REQ SB MSG --- o_rdi_lp_sb_decode = %s, should = SB_ADAPTER_REQ_LINKRESET", o_rdi_lp_sb_decode);
+				$stop();
+			end
 
-			$stop();
+			if (o_valid_lp_sb != 1) begin
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ", $time());
+				$display("Adapter did not send LINKRESET_REQ SB MSG --- o_valid_lp_sb = %s, should = 1", o_valid_lp_sb);
+
+				$stop();
+			end
+
+			// Respond to Adapter's SB Request from Phy (Remote Adapter)
+			repeat(5) @(negedge i_clk);
+			i_rdi_pl_sb_decode 	= SB_ADAPTER_RSP_LINKRESET;
+			i_valid_pl_sb 		= 1;
+			@(negedge i_clk);
+
+			if (o_fdi_pl_state_sts != LINKRESET_STS) begin
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ", $time());
+				$display("Adapter did not transition to LINKRESET --- o_fdi_pl_state_sts = %s, should = LINKRESET_STS", o_fdi_pl_state_sts);
+
+				$stop();
+			end
+
+			if (o_rdi_lp_state_req != LINKRESET_REQ) begin
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ", $time());
+				$display("Adapter did not propagate LINKRESET_REQ to Phy --- o_rdi_lp_state_req = %s, should = LINKRESET_REQ", o_rdi_lp_state_req);
+
+				$stop();
+			end
+
+
+			// Respond to Adapter's RDI Request from Phy
+			repeat(5) @(negedge i_clk);
+			i_rdi_pl_state_sts = LINKRESET_STS;
+			@(negedge i_clk);
+
+
+			$display("[%0t] ***************************************************** Successfully Entered LINKRESET State *******************************************************\n", $time());
 		end
-
-		if (o_valid_lp_sb != 1) begin
-			$display("ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ\n
-						Adapter did not send LINKRESET_REQ SB MSG --- o_valid_lp_sb = %s, should = 1", o_valid_lp_sb);
-
-			$stop();
-		end
-
-		// Respond to Adapter's SB Request from Phy (Remote Adapter)
-		repeat(5) @(negedge i_clk);
-		i_rdi_pl_sb_decode 	= SB_ADAPTER_RSP_LINKRESET;
-		i_valid_pl_sb 		= 1;
-		@(negedge i_clk);
-
-		if (o_fdi_pl_state_sts != LINKRESET_STS) begin
-			$display("ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ\n
-						Adapter did not transition to LINKRESET --- o_fdi_pl_state_sts = %s, should = LINKRESET_STS", o_fdi_pl_state_sts);
-
-			$stop();
-		end
-
-		if (o_rdi_lp_state_req != LINKRESET_REQ) begin
-			$display("ERROR - LINKRESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = LINKRESET_REQ\n
-						Adapter did not propagate LINKRESET_REQ to Phy --- o_rdi_lp_state_req = %s, should = LINKRESET_REQ", o_rdi_lp_state_req);
-
-			$stop();
-		end
-
-
-		// Respond to Adapter's RDI Request from Phy
-		repeat(5) @(negedge i_clk);
-		i_rdi_pl_state_sts = LINKRESET_STS;
-		@(negedge i_clk);
-
-		$display("time=%0t",$time);
-
-		$display(" ***** enter_linkreset_trigger_protocol DONE*******");
-
 
 
 	endtask : enter_linkreset_trigger_protocol
@@ -839,6 +851,8 @@ import shared_pkg::*;
 
 
 	task enter_linkreset_trigger_SB_MSG;
+		$display("[%0t] ************************************************ LINKRESET Entry from Remote Die Partner Started *************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -853,22 +867,22 @@ import shared_pkg::*;
 		if (i_rdi_pl_state_sts != LINKERROR_STS) begin
 			busy_trigger();
 			if (o_fdi_pl_state_sts != LINKRESET_STS) begin
-				$display("ERROR - LINKRESET_ENTRY - Trigger: SB MSG - i_rdi_pl_sb_decode = SB_ADAPTER_REQ_LINKRESET\n
-							Adapter did not transition to LINKRESET --- o_fdi_pl_state_sts = %s, should = LINKRESET_STS", o_fdi_pl_state_sts);
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: SB MSG - i_rdi_pl_sb_decode = SB_ADAPTER_REQ_LINKRESET", $time());
+				$display("Adapter did not transition to LINKRESET --- o_fdi_pl_state_sts = %s, should = LINKRESET_STS", o_fdi_pl_state_sts);
 
 				$stop();
 			end
 
 			if (o_rdi_lp_sb_decode != SB_ADAPTER_RSP_LINKRESET) begin
-				$display("ERROR - LINKRESET_ENTRY - Trigger: SB MSG - i_rdi_pl_sb_decode = SB_ADAPTER_REQ_LINKRESET\n
-							Adapter did not send LINKRESET_RSP SB MSG --- o_rdi_lp_sb_decode = %s, should = SB_ADAPTER_RSP_LINKRESET", o_rdi_lp_sb_decode);
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: SB MSG - i_rdi_pl_sb_decode = SB_ADAPTER_REQ_LINKRESET", $time());
+				$display("Adapter did not send LINKRESET_RSP SB MSG --- o_rdi_lp_sb_decode = %s, should = SB_ADAPTER_RSP_LINKRESET", o_rdi_lp_sb_decode);
 
 				$stop();
 			end
 
 			if (o_valid_lp_sb != 1) begin
-				$display("ERROR - LINKRESET_ENTRY - Trigger: SB MSG - i_rdi_pl_sb_decode = SB_ADAPTER_REQ_LINKRESET\n
-							Adapter did not send LINKRESET_RSP SB MSG --- o_valid_lp_sb = %s, should = 1", o_valid_lp_sb);
+				$display("[%0t] ERROR - LINKRESET_ENTRY - Trigger: SB MSG - i_rdi_pl_sb_decode = SB_ADAPTER_REQ_LINKRESET", $time());
+				$display("Adapter did not send LINKRESET_RSP SB MSG --- o_valid_lp_sb = %s, should = 1", o_valid_lp_sb);
 
 				$stop();
 			end
@@ -878,6 +892,9 @@ import shared_pkg::*;
 			repeat(5) @(negedge i_clk);
 			i_rdi_pl_state_sts = LINKRESET_STS;
 			@(negedge i_clk);
+
+
+			$display("[%0t] ***************************************************** Successfully Entered LINKRESET State *******************************************************\n", $time());
 		end
 
 	endtask : enter_linkreset_trigger_SB_MSG
@@ -886,6 +903,8 @@ import shared_pkg::*;
 
 
 	task enter_retrain_trigger_protocol;
+		$display("[%0t] *************************************************** RETRAIN Entry from Protocol Layer Started ****************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -896,8 +915,8 @@ import shared_pkg::*;
 		@(negedge i_clk);
 		if (i_rdi_pl_state_sts != LINKERROR_STS) begin
 			if (o_rdi_lp_state_req != RETRAIN_REQ) begin
-				$display("ERROR - RETRAIN_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = RETRAIN_REQ\n
-							Adapter did not propagate Protocol RETRAIN_REQ to Phy --- o_rdi_lp_state_req = %s, should = RETRAIN_REQ", o_rdi_lp_state_req);
+				$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = RETRAIN_REQ", $time());
+				$display("Adapter did not propagate Protocol RETRAIN_REQ to Phy --- o_rdi_lp_state_req = %s, should = RETRAIN_REQ", o_rdi_lp_state_req);
 
 				$stop();
 			end
@@ -908,13 +927,14 @@ import shared_pkg::*;
 			@(negedge i_clk);
 
 			if (o_fdi_pl_state_sts != RETRAIN_STS) begin
-				$display("ERROR - RETRAIN_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = RETRAIN_REQ\n
-							Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
+				$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = RETRAIN_REQ", $time());
+				$display("Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
 
 				$stop();
 			end
 
-			$display("enter_retrain_trigger_protocol DONE",);
+			$display("[%0t] ****************************************************** Successfully Entered RETRAIN State ********************************************************\n", $time());
+		
 		end
 	endtask : enter_retrain_trigger_protocol
 
@@ -922,6 +942,8 @@ import shared_pkg::*;
 
 
 	task enter_retrain_trigger_CSR;
+		$display("[%0t] ********************************************************* RETRAIN Entry from CSR Started *********************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -933,8 +955,8 @@ import shared_pkg::*;
 		@(negedge i_clk);
 		if (i_rdi_pl_state_sts != LINKERROR_STS) begin
 			if (o_rdi_lp_state_req != RETRAIN_REQ) begin
-				$display("ERROR - RETRAIN_ENTRY - Trigger: CSR - i_CSR_UCIe_Link_Control_Retrain = 1\n
-							Adapter did not propagate CSR RETRAIN_REQ to Phy --- o_rdi_lp_state_req = %s, should = RETRAIN_REQ", o_rdi_lp_state_req);
+				$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: CSR - i_CSR_UCIe_Link_Control_Retrain = 1", $time());
+				$display("Adapter did not propagate CSR RETRAIN_REQ to Phy --- o_rdi_lp_state_req = %s, should = RETRAIN_REQ", o_rdi_lp_state_req);
 
 				$stop();
 			end
@@ -945,11 +967,14 @@ import shared_pkg::*;
 			@(negedge i_clk);
 
 			if (o_fdi_pl_state_sts != RETRAIN_STS) begin
-				$display("ERROR - RETRAIN_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = RETRAIN_REQ\n
-							Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
+				$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = RETRAIN_REQ", $time());
+				$display("Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
 
 				$stop();
 			end
+
+			$display("[%0t] ****************************************************** Successfully Entered RETRAIN State ********************************************************\n", $time());
+		
 		end
 	endtask : enter_retrain_trigger_CSR
 
@@ -957,6 +982,8 @@ import shared_pkg::*;
 
 
 	task enter_retrain_trigger_error;
+		$display("[%0t] ************************************************** RETRAIN Entry due to Internal Error Started ***************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -969,8 +996,8 @@ import shared_pkg::*;
 		@(negedge i_clk);
 		if (i_rdi_pl_state_sts != LINKERROR_STS) begin
 			if (o_rdi_lp_state_req != RETRAIN_REQ) begin
-				$display("ERROR - RETRAIN_ENTRY - Trigger: Internal - i_fdi_pl_error = 1\n
-							Adapter did not propagate RETRAIN_REQ to Phy --- o_rdi_lp_state_req = %s, should = RETRAIN_REQ", o_rdi_lp_state_req);
+				$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: Internal - i_fdi_pl_error = 1", $time());
+				$display("Adapter did not propagate RETRAIN_REQ to Phy --- o_rdi_lp_state_req = %s, should = RETRAIN_REQ", o_rdi_lp_state_req);
 
 				$stop();
 			end
@@ -981,11 +1008,14 @@ import shared_pkg::*;
 			@(negedge i_clk);
 
 			if (o_fdi_pl_state_sts != RETRAIN_STS) begin
-				$display("ERROR - RETRAIN_ENTRY - Trigger: Internal - i_fdi_pl_error = 1\n
-							Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
+				$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: Internal - i_fdi_pl_error = 1", $time());
+				$display("Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
 
 				$stop();
 			end
+
+			$display("[%0t] ****************************************************** Successfully Entered RETRAIN State ********************************************************\n", $time());
+		
 		end
 	endtask : enter_retrain_trigger_error
 
@@ -993,6 +1023,8 @@ import shared_pkg::*;
 
 
 	task enter_retrain_trigger_PHY;
+		$display("[%0t] *************************************************** RETRAIN Entry from Physical Layer Started ****************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -1004,17 +1036,67 @@ import shared_pkg::*;
 
 		@(negedge i_clk);
 		if (o_fdi_pl_state_sts != RETRAIN_STS) begin
-			$display("ERROR - RETRAIN_ENTRY - Trigger: Physical Layer - i_rdi_pl_state_sts = RETRAIN_STS\n
-						Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
+			$display("[%0t] ERROR - RETRAIN_ENTRY - Trigger: Physical Layer - i_rdi_pl_state_sts = RETRAIN_STS", $time());
+			$display("Adapter did not report RETRAIN_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RETRAIN_STS", o_fdi_pl_state_sts);
 
 			$stop();
 		end
-		$display("******* enter_retrain_trigger_PHY ***********");
+
+		$display("[%0t] ****************************************************** Successfully Entered RETRAIN State ********************************************************\n", $time());
+		
 	endtask : enter_retrain_trigger_PHY
 
 
 
+	task enter_reset_trigger_Protocol;
+		$display("[%0t] **************************************************** RESET Entry from Protocol Layer Started *****************************************************\n", $time());
+
+		i_fdi_lp_linkerror 	= 0;
+		i_overflow_TX 		= 0;
+		i_overflow_RX 		= 0;
+		i_rdi_pl_state_sts 	= o_fdi_pl_state_sts;			// Assuming Stable State (Adapter State = Phy State)
+		i_valid_pl_sb		= 0;
+		i_fdi_lp_state_req 	= ACTIVE_REQ;
+		i_CSR_UCIe_Link_Control_Retrain = 0;
+		i_fdi_pl_error 		= 0;
+
+		
+		if (o_fdi_pl_state_sts == LINKERROR_STS) begin
+			repeat(41) @(negedge i_clk);
+		end
+		else begin
+			@(negedge i_clk);
+		end
+		
+		if (o_rdi_lp_state_req != ACTIVE_REQ) begin
+			$display("[%0t] ERROR - RESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = ACTIVE_REQ", $time());
+			$display("Adapter did not propagate Protocol ACTIVE_REQ to Phy --- o_rdi_lp_state_req = %s, should = ACTIVE_REQ", o_rdi_lp_state_req);
+
+			$stop();
+		end
+
+		// Respond to Adapter's RDI Request from Phy
+		repeat(5) @(negedge i_clk);
+		i_rdi_pl_state_sts = RESET_STS;
+		@(negedge i_clk);
+
+		if (o_fdi_pl_state_sts != RESET_STS) begin
+			$display("[%0t] ERROR - RESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = ACTIVE_REQ", $time());
+			$display("Adapter did not report RESET_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RESET_STS", o_fdi_pl_state_sts);
+
+			$stop();
+		end
+
+		$display("[%0t] ******************************************************* Successfully Entered RESET State *********************************************************\n", $time());		
+	
+
+	endtask : enter_reset_trigger_Protocol
+
+
+
 	task enter_reset_trigger_PHY;
+		$display("[%0t] **************************************************** RESET Entry from Physical Layer Started *****************************************************\n", $time());
+
 		i_fdi_lp_linkerror 	= 0;
 		i_overflow_TX 		= 0;
 		i_overflow_RX 		= 0;
@@ -1028,61 +1110,17 @@ import shared_pkg::*;
 
 		@(negedge i_clk);
 		if (o_fdi_pl_state_sts != RESET_STS) begin
-			$display("ERROR - RESET_ENTRY - Trigger: Physical Layer - i_rdi_pl_state_sts = RESET_STS\n
-						Adapter did not report RESET_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RESET_STS", o_fdi_pl_state_sts);
+			$display("[%0t] ERROR - RESET_ENTRY - Trigger: Physical Layer - i_rdi_pl_state_sts = RESET_STS", $time());
+			$display("Adapter did not report RESET_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RESET_STS", o_fdi_pl_state_sts);
 
 			$stop();
 		end
 
-		$display("******* enter_reset_trigger_PHY DONE ***********");
-
+		$display("[%0t] ******************************************************* Successfully Entered RESET State *********************************************************\n", $time());		
 
 	endtask : enter_reset_trigger_PHY
 
 
-
-	task enter_reset_trigger_Protocol;
-		i_fdi_lp_linkerror 	= 0;
-		i_overflow_TX 		= 0;
-		i_overflow_RX 		= 0;
-		i_rdi_pl_state_sts 	= o_fdi_pl_state_sts;			// Assuming Stable State (Adapter State = Phy State)
-		i_valid_pl_sb		= 0;
-		i_fdi_lp_state_req 	= ACTIVE_REQ;
-		i_CSR_UCIe_Link_Control_Retrain = 0;
-		i_fdi_pl_error 		= 0;
-
-		
-			if (o_fdi_pl_state_sts == LINKERROR_STS) begin
-				repeat(41) @(negedge i_clk);
-			end
-			else begin
-				@(negedge i_clk);
-			end
-			
-			if (o_rdi_lp_state_req != ACTIVE_REQ) begin
-				$display("ERROR - RESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = ACTIVE_REQ\n
-							Adapter did not propagate Protocol ACTIVE_REQ to Phy --- o_rdi_lp_state_req = %s, should = ACTIVE_REQ", o_rdi_lp_state_req);
-
-				$stop();
-			end
-
-			// Respond to Adapter's RDI Request from Phy
-			repeat(5) @(negedge i_clk);
-			i_rdi_pl_state_sts = RESET_STS;
-			@(negedge i_clk);
-
-			if (o_fdi_pl_state_sts != RESET_STS) begin
-				$display("ERROR - RESET_ENTRY - Trigger: Protocol Layer - i_fdi_lp_state_req = ACTIVE_REQ\n
-							Adapter did not report RESET_STS to Protocol --- o_fdi_pl_state_sts = %s, should = RESET_STS", o_fdi_pl_state_sts);
-
-				$stop();
-			end
-
-			$display(" ********* enter_reset_trigger_Protocol done ********");
-		
-
-
-	endtask : enter_reset_trigger_Protocol
 
 	task busy_trigger ;
 		fork
@@ -1101,6 +1139,8 @@ import shared_pkg::*;
 	endtask
 
 	task retrain_flow_diagram_TX_protocol_RX_phy();
+		$display("[%0t] ******************************************************* RETRAIN Flow Diagram Test Started ********************************************************\n", $time());
+
 		/////////////////////////////////////////////////////////////////////////////////
 						// Active to Retrain  RETRAIN FLOW TX FROM PROTOCOL
 		enter_retrain_trigger_protocol();
@@ -1125,7 +1165,9 @@ import shared_pkg::*;
 		Active_Entry_Link_initialization(REQS_RSPR_REQR_RSPS,1,1);
 		repeat (10) @(negedge i_clk); 		// Retrain State
 
-		$display("************** retrain_flow_diagram_TX_protocol_RX_phy DONE *************");
+
+
+		$display("[%0t] ********************************************** RETRAIN Flow Diagram Test is Completed Successfully ***********************************************\n", $time());
 
 
 		///////////////////////////////////////////////////////////////////////////////
@@ -1133,8 +1175,10 @@ import shared_pkg::*;
 	endtask
 
 	task linkerror_flow_diagram_TX_protocol_RX_phy();
+		$display("[%0t] ****************************************************** LINKERROR Flow Diagram Test Started *******************************************************\n", $time());
+
 		/////////////////////////////////////////////////////////////////////////////////////////////
-						// Active to LINK ERROR   FLOW TX FROM PROTOCOL
+						// Active to LINKERROR   FLOW TX FROM PROTOCOL
 		enter_linkerror_trigger_protocol();
 		enter_reset_trigger_Protocol();
 
@@ -1147,7 +1191,7 @@ import shared_pkg::*;
 
 
 		/////////////////////////////////////////////////////////////////////////////////
-						// Active to LINK ERROR   FLOW RX FROM PHY
+						// Active to LINKERROR   FLOW RX FROM PHY
 		enter_linkerror_trigger_PHY();
 		enter_reset_trigger_PHY();
 
@@ -1158,13 +1202,17 @@ import shared_pkg::*;
 
 		repeat (10) @(negedge i_clk); 
 
-		$display("************** link_ERROR_flow_diagram_TX_protocol_RX_phy DONE *************");
+
+
+		$display("[%0t] ********************************************* LINKERROR Flow Diagram Test is Completed Successfully **********************************************\n", $time());
 
 
 		///////////////////////////////////////////////////////////////////////////////
 	endtask
 
 	task linkreset_flow_diagram_TX_protocol_RX_SB_MESSAGE();
+		$display("[%0t] ****************************************************** LINKRESET Flow Diagram Test Started *******************************************************\n", $time());
+
 		///////////////////////////////////////////////////////////////////////////////////////////////////
 		enter_linkreset_trigger_protocol();
 		enter_reset_trigger_Protocol();
@@ -1182,7 +1230,10 @@ import shared_pkg::*;
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////
 
-		$display("linkreset_flow_diagram_TX_protocol_RX_SB_MESSAGE DONE ");
+
+
+		$display("[%0t] ********************************************* LINKRESET Flow Diagram Test is Completed Successfully **********************************************\n", $time());
+
 
 	endtask
 
@@ -1219,48 +1270,10 @@ import shared_pkg::*;
 		linkreset_flow_diagram_TX_protocol_RX_SB_MESSAGE();
 
 
-		$display("********************************************* TEST PASSED *********************************************");
+		$display("\n\n******************************************************************************************** ALL TESTS PASSED ********************************************************************************************");
+
 		$stop();
 
 	end
 
 endmodule
-
-
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		/*
-		i_fdi_lp_state_req=0;
-		i_fdi_lp_rx_active_sts=0;
-		i_fdi_lp_linkerror=0;
-		i_rdi_pl_state_sts=0;
-		i_rdi_pl_inband_pres=0;
-		i_rdi_pl_speedmode=0;
-		i_rdi_pl_lnk_cfg=0;
-		i_rdi_pl_sb_decode=0;
-		i_valid_pl_sb=0;
-		i_rdi_pl_adv_cap_val=0;
-
-		i_CSR_UCIe_Link_Control_Retrain=0;
-		i_CSR_ADVCAP
-		i_overflow_TX
-		i_overflow_RX
-		*/
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-				/*
-		o_fdi_pl_state_sts=e_status'(o_fdi_pl_state_sts);
-
-		o_fdi_pl_protocol=e_protocol'(o_fdi_pl_protocol);
-
-		o_fdi_pl_protocol_flitfmt=e_format'(o_fdi_pl_protocol_flitfmt);
-
-		o_fdi_pl_speedmode=e_speed'(o_fdi_pl_speedmode);
-
-		o_fdi_pl_lnk_cfg=e_lnk_cfg'(o_fdi_pl_lnk_cfg);
-
-		o_rdi_lp_state_req=e_request'(o_rdi_lp_state_req);
-
-		o_rdi_lp_sb_decode=e_SB_msg'(o_rdi_lp_sb_decode);
-		*/
