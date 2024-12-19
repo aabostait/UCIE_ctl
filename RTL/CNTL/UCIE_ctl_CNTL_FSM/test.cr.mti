@@ -1,0 +1,16 @@
+D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/Timer.v {1 {vlog -work work -vopt -stats=none D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/Timer.v
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module Timer
+
+Top level modules:
+	Timer
+
+} {} {}} D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v {0 {vlog -work work -vopt -stats=none D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+-- Compiling module CNTL_FSM
+** Error (suppressible): D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v(117): (vlog-2388) 'pl_trainerror_i' already declared in this scope (CNTL_FSM) at D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v(18).
+** Error: D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v(952): (vlog-2730) Undefined variable: 'IS_NOP_SENT_temp'.
+** Error: D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v(1069): (vlog-2730) Undefined variable: 'o_rdi_pl_adv_cap_reg_value'.
+** Error: (vlog-13069) D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/CNTL_FSM.v(1478): near "o_fdi_pl_rx_active_req_temp": syntax error, unexpected IDENTIFIER, expecting ';'.
+
+} {5.0 8.0} {}}

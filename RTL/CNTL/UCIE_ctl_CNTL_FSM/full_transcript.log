@@ -1,0 +1,297 @@
+# vsim -voptargs="+acc" work.UCIE_ctl_CNTL_FSM_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 05:52:32 on Dec 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "UCIE_ctl_CNTL_FSM(fast)".
+# Loading sv_std.std
+# Loading work.shared_pkg(fast)
+# Loading work.UCIE_ctl_CNTL_FSM_tb(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_clk'.
+# Executing ONERROR command at macro ./wave.do line 3
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rst_n'.
+# Executing ONERROR command at macro ./wave.do line 4
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_state_sts'.
+# Executing ONERROR command at macro ./wave.do line 5
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_fdi_lp_state_req'.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_sb_decode'.
+# Executing ONERROR command at macro ./wave.do line 7
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_valid_pl_sb'.
+# Executing ONERROR command at macro ./wave.do line 8
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_fdi_lp_rx_active_sts'.
+# Executing ONERROR command at macro ./wave.do line 9
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_fdi_lp_linkerror'.
+# Executing ONERROR command at macro ./wave.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_fdi_pl_error'.
+# Executing ONERROR command at macro ./wave.do line 11
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_inband_pres'.
+# Executing ONERROR command at macro ./wave.do line 12
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_speedmode'.
+# Executing ONERROR command at macro ./wave.do line 13
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_lnk_cfg'.
+# Executing ONERROR command at macro ./wave.do line 14
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_phyinrecenter'.
+# Executing ONERROR command at macro ./wave.do line 15
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_rdi_pl_adv_cap_val'.
+# Executing ONERROR command at macro ./wave.do line 16
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_CSR_UCIe_Link_Control_Retrain'.
+# Executing ONERROR command at macro ./wave.do line 17
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_CSR_ADVCAP'.
+# Executing ONERROR command at macro ./wave.do line 18
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_overflow_TX'.
+# Executing ONERROR command at macro ./wave.do line 19
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_overflow_RX'.
+# Executing ONERROR command at macro ./wave.do line 20
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_state_sts'.
+# Executing ONERROR command at macro ./wave.do line 21
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_rdi_lp_state_req'.
+# Executing ONERROR command at macro ./wave.do line 22
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_rdi_lp_sb_decode'.
+# Executing ONERROR command at macro ./wave.do line 23
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_valid_lp_sb'.
+# Executing ONERROR command at macro ./wave.do line 24
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_inband_pres'.
+# Executing ONERROR command at macro ./wave.do line 25
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_rx_active_req'.
+# Executing ONERROR command at macro ./wave.do line 26
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_pl_phyinrecenter_i'.
+# Executing ONERROR command at macro ./wave.do line 27
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_pl_trainerror_i'.
+# Executing ONERROR command at macro ./wave.do line 28
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_rdi_lp_linkerror'.
+# Executing ONERROR command at macro ./wave.do line 29
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_protocol_vld'.
+# Executing ONERROR command at macro ./wave.do line 30
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_protocol'.
+# Executing ONERROR command at macro ./wave.do line 31
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_protocol_flitfmt'.
+# Executing ONERROR command at macro ./wave.do line 32
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_speedmode'.
+# Executing ONERROR command at macro ./wave.do line 33
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_fdi_pl_lnk_cfg'.
+# Executing ONERROR command at macro ./wave.do line 34
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/o_rdi_lp_adv_cap_val'.
+# Executing ONERROR command at macro ./wave.do line 35
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/cs'.
+# Executing ONERROR command at macro ./wave.do line 36
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/ns'.
+# Executing ONERROR command at macro ./wave.do line 37
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/i_sb_busy_flag'.
+# Executing ONERROR command at macro ./wave.do line 38
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/IS_NOP_SENT_temp'.
+# Executing ONERROR command at macro ./wave.do line 39
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/IS_NOP_SENT'.
+# Executing ONERROR command at macro ./wave.do line 40
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/error_count'.
+# Executing ONERROR command at macro ./wave.do line 41
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/DUT/sb_busy_flag_edge_detected'.
+# Executing ONERROR command at macro ./wave.do line 42
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/DUT/timer/Flag'.
+# Executing ONERROR command at macro ./wave.do line 43
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/DUT/timer/counter'.
+# Executing ONERROR command at macro ./wave.do line 44
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/DUT/transitioned_from_NOP_flag'.
+# Executing ONERROR command at macro ./wave.do line 45
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/DUT/RX_done_flag'.
+# Executing ONERROR command at macro ./wave.do line 46
+# ** UI-Msg: (vish-4014) No objects found matching '/CNTL_FSM_tb/DUT/TX_done_flag'.
+# Executing ONERROR command at macro ./wave.do line 47
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                 290
+# ************** ACTIVE ENTRY DONE ******************************
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                 710
+# ************** ACTIVE ENTRY DONE ******************************
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                1090
+# ************** ACTIVE ENTRY DONE ******************************
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                1530
+# ************** ACTIVE ENTRY DONE ******************************
+# enter_retrain_trigger_protocol DONE 
+# Active entry from remote die partner started 
+# 
+# time=                2040
+# ************** ACTIVE ENTRY DONE ******************************
+# ******* enter_retrain_trigger_PHY ***********
+# Active entry from remote die partner started 
+# 
+# time=                2390
+# ************** ACTIVE ENTRY DONE ******************************
+# ************** retrain_flow_diagram_TX_protocol_RX_phy DONE *************
+# enter_linkerror_trigger_protocol done 
+#  ********* enter_reset_trigger_Protocol done ********
+# Active entry from remote die partner started 
+# 
+# time=                3390
+# ************** ACTIVE ENTRY DONE ******************************
+# ****** enter_linkerror_trigger_PHY DONE ********************
+# ******* enter_reset_trigger_PHY DONE ***********
+# Active entry from remote die partner started 
+# 
+# time=                3770
+# ************** ACTIVE ENTRY DONE ******************************
+# ************** link_ERROR_flow_diagram_TX_protocol_RX_phy DONE *************
+# time=4010
+#  ***** enter_linkreset_trigger_protocol DONE*******
+#  ********* enter_reset_trigger_Protocol done ********
+# Active entry from remote die partner started 
+# 
+# time=                4430
+# ************** ACTIVE ENTRY DONE ******************************
+# ******* enter_reset_trigger_PHY DONE ***********
+# Active entry from remote die partner started 
+# 
+# time=                4870
+# ************** ACTIVE ENTRY DONE ******************************
+# linkreset_flow_diagram_TX_protocol_RX_SB_MESSAGE DONE 
+# ********************************************* TEST PASSED *********************************************
+# ** Note: $stop    : UCIE_ctl_CNTL_FSM_tb.sv(1223)
+#    Time: 4880 ns  Iteration: 1  Instance: /UCIE_ctl_CNTL_FSM_tb
+# Break in Module UCIE_ctl_CNTL_FSM_tb at UCIE_ctl_CNTL_FSM_tb.sv line 1223
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 05:53:44 on Dec 19,2024
+# vlog -reportprogress 300 -f sourcefile.txt "+cover" 
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_CNTL_FSM_tb
+# -- Importing package shared_pkg
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(633): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(638): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(651): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(675): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(680): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(693): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(717): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(722): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(735): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(756): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(791): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(798): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(811): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(818): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(856): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(863): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(870): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(899): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(911): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(936): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(948): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(972): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(984): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(1007): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(1031): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(1063): (vlog-2643) Unterminated string literal continues onto next line.
+# ** Warning: UCIE_ctl_CNTL_FSM_tb.sv(1075): (vlog-2643) Unterminated string literal continues onto next line.
+# -- Compiling package shared_pkg
+# -- Compiling module Timer
+# 
+# Top level modules:
+# 	UCIE_ctl_CNTL_FSM_tb
+# End time: 05:53:44 on Dec 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 27
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/test.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/test.mpf).  File can not be renamed.
+# End time: 05:53:47 on Dec 19,2024, Elapsed time: 0:01:15
+# Errors: 2, Warnings: 1
+# vsim -voptargs="+acc" work.UCIE_ctl_CNTL_FSM_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 05:53:47 on Dec 19,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.shared_pkg(fast)
+# Loading work.UCIE_ctl_CNTL_FSM_tb(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                 290
+# ************** ACTIVE ENTRY DONE ******************************
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                 710
+# ************** ACTIVE ENTRY DONE ******************************
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                1090
+# ************** ACTIVE ENTRY DONE ******************************
+# ************* Reset Asserted ***************** 
+# ************* Reset Deasserted ************** 
+# Active entry from Reset started 
+# 
+# time=                1530
+# ************** ACTIVE ENTRY DONE ******************************
+# enter_retrain_trigger_protocol DONE 
+# Active entry from remote die partner started 
+# 
+# time=                2040
+# ************** ACTIVE ENTRY DONE ******************************
+# ******* enter_retrain_trigger_PHY ***********
+# Active entry from remote die partner started 
+# 
+# time=                2390
+# ************** ACTIVE ENTRY DONE ******************************
+# ************** retrain_flow_diagram_TX_protocol_RX_phy DONE *************
+# enter_linkerror_trigger_protocol done 
+#  ********* enter_reset_trigger_Protocol done ********
+# Active entry from remote die partner started 
+# 
+# time=                3390
+# ************** ACTIVE ENTRY DONE ******************************
+# ****** enter_linkerror_trigger_PHY DONE ********************
+# ******* enter_reset_trigger_PHY DONE ***********
+# Active entry from remote die partner started 
+# 
+# time=                3770
+# ************** ACTIVE ENTRY DONE ******************************
+# ************** link_ERROR_flow_diagram_TX_protocol_RX_phy DONE *************
+# time=4010
+#  ***** enter_linkreset_trigger_protocol DONE*******
+#  ********* enter_reset_trigger_Protocol done ********
+# Active entry from remote die partner started 
+# 
+# time=                4430
+# ************** ACTIVE ENTRY DONE ******************************
+# ******* enter_reset_trigger_PHY DONE ***********
+# Active entry from remote die partner started 
+# 
+# time=                4870
+# ************** ACTIVE ENTRY DONE ******************************
+# linkreset_flow_diagram_TX_protocol_RX_SB_MESSAGE DONE 
+# ********************************************* TEST PASSED *********************************************
+# ** Note: $stop    : UCIE_ctl_CNTL_FSM_tb.sv(1223)
+#    Time: 4880 ns  Iteration: 1  Instance: /UCIE_ctl_CNTL_FSM_tb
+# Break in Module UCIE_ctl_CNTL_FSM_tb at UCIE_ctl_CNTL_FSM_tb.sv line 1223
+quit -sim
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/test.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/ASU/Digital_IC_STUDY/Si_Vision/GP/Architecture/RTL/FSM/test.mpf).  File can not be renamed.
+# End time: 05:55:18 on Dec 19,2024, Elapsed time: 0:01:31
+# Errors: 2, Warnings: 1
