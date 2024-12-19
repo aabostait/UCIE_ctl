@@ -1,0 +1,4 @@
+../RTL_TB/CNTL/UCIE_ctl_CNTL_FSM/UCIE_ctl_shared_pkg.sv
+../RTL/CNTL/UCIE_ctl_CNTL_FSM/Timer.v
+../RTL/CNTL/UCIE_ctl_CNTL_FSM/UCIE_ctl_CNTL_FSM.v
+../RTL_TB/CNTL/UCIE_ctl_CNTL_FSM/UCIE_ctl_CNTL_FSM_tb.sv
