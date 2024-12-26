@@ -26,7 +26,7 @@ module UCIE_ctl_TX #(
   wire  w_fifo_full ;
   wire  w_fifo_empty;
 
-  async_fifo #(
+  UCIE_ctl_tx_async_fifo #(
     .DSIZE (FIFO_D_SIZE),
     .ASIZE (FIFO_P_SIZE)
   )  
