@@ -1,4 +1,4 @@
-module UCIE_ctl_RX_buffer #(parameter NBYTES=32 , DEPTH=4)(
+module UCIE_ctl_RX_buffer #(parameter NBYTES=64 , DEPTH=4)(
   
   input wire               i_clk,
   input wire               i_rst,
