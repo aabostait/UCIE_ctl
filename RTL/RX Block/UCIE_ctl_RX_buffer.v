@@ -1,4 +1,4 @@
-module UCIE_ctl_RX_buffer #(parameter NBYTES=3 , DEPTH=4)(
+module UCIE_ctl_RX_buffer #(parameter NBYTES=32 , DEPTH=4)(
   
   input wire               i_clk,
   input wire               i_rst,
@@ -18,6 +18,9 @@ module UCIE_ctl_RX_buffer #(parameter NBYTES=3 , DEPTH=4)(
   
   always@(posedge i_clk or negedge i_rst)begin
     if(!i_rst)begin
+      for (i = 0; i < DEPTH; i = i + 1) begin
+            r_mem[i] <= 0; // Initialize each location to zero on reset
+        end
       r_wr_ptr            <=0;
       r_rd_ptr            <=0;
       r_count             <=0;
