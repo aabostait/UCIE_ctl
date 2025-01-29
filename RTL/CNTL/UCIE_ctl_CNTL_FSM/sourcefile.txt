@@ -1,4 +1,0 @@
-UCIE_ctl_CNTL_FSM.v
-UCIE_ctl_CNTL_FSM_tb.sv
-shared_pkg.sv
-Timer.v
