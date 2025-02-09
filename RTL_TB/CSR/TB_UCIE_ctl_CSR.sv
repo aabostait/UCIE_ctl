@@ -15,10 +15,14 @@ module TB_UCIE_ctl_CSR ();
 	wire [31:0] o_P_RDATA;
 	wire [31:0] o_Advcap;
 	wire o_retrain;
+	wire [7:0] o_phy_addr; 
+	wire [31:0] o_phy_WDATA;
+	wire o_phy_WR; // 1 write , 0 read
 
-	UCIE_ctl_CSR DUT (i_clk, i_rst_n, i_A_Valid, 
+	UCIE_ctl_CSR DUT (i_clk, i_rst_n, i_A_Valid,
 	i_P_Select, i_P_Enable, i_P_addr, i_A_addr, i_P_WDATA, i_P_WR,
-	o_P_Ready, o_P_RDATA, o_Advcap, o_retrain, i_A_WDATA);
+	o_P_Ready, o_P_RDATA, o_Advcap, o_retrain, i_A_WDATA,
+	o_phy_WR, o_phy_WDATA, o_phy_addr);
 
 	task Reset();
 		i_rst_n = 0;
@@ -61,6 +65,7 @@ module TB_UCIE_ctl_CSR ();
 		i_A_addr = addr;
 		i_A_WDATA = Data;
 		@(negedge i_clk);
+		i_A_Valid = 0;
 	endtask
 
 	// simultaneously
