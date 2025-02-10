@@ -1,0 +1,2 @@
+./TB/UCIE_ctl_shared_pkg.sv
+./TB/UCIE_ctl_DUT2DUT_tb.sv
