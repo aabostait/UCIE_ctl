@@ -19,6 +19,7 @@ module UCIE_ctl_TX_FSM (
 );
 
 	parameter UCIE_ACTIVE 	= 'b0001;
+	
 	localparam RESET 		= 2'b00; 
 	localparam ACTIVE 		= 2'b10; 
 	localparam OVERFLOW		= 2'b11;

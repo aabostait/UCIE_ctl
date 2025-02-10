@@ -1,9 +1,9 @@
 module UCIE_ctl_TX #(
   parameter     UCIE_ACTIVE = 1  ,                           
-  parameter     FIFO_D_SIZE = 64 ,
-  parameter     FIFO_DEPTH  = 8  ,                       
-  parameter     FIFO_P_SIZE = 3  
-) (
+  parameter     DATA_WIDTH_TX = 64 ,
+  parameter     FIFO_DEPTH_TX  = 8                         
+ )
+ (
   input 			i_clk,
   input 			i_rst,
   input [3:0] i_fdi_pl_state_sts,
@@ -15,8 +15,8 @@ module UCIE_ctl_TX #(
   output 			o_rdi_lp_valid,
   output 			o_rdi_lp_irdy,
 
-  input   [FIFO_D_SIZE-1:0]     i_w_data,             // write data bus 
-  output  [FIFO_D_SIZE-1:0]     o_r_data             // read data bus
+  input   [DATA_WIDTH_TX-1:0]     i_w_data,             // write data bus 
+  output  [DATA_WIDTH_TX-1:0]     o_r_data             // read data bus
 );
 
   wire  w_fifo_w_rst;
@@ -26,22 +26,24 @@ module UCIE_ctl_TX #(
   wire  w_fifo_full ;
   wire  w_fifo_empty;
 
-  UCIE_ctl_tx_async_fifo #(
-    .DSIZE (FIFO_D_SIZE),
-    .ASIZE (FIFO_P_SIZE)
-  )  
-    fifo_tx(
-      .wclk  (i_clk       ),
-      .rclk  (i_clk       ),
-      .wrst_n (w_fifo_w_rst),
-      .rrst_n (w_fifo_r_rst),
-      .winc  (w_fifo_w_inc),
-      .rinc  (w_fifo_r_inc),
-      .wfull   (w_fifo_full ),
-      .rempty  (w_fifo_empty),
-      .wdata (i_w_data    ),
-      .rdata (o_r_data    )
-  );
+    FIFO_TOP #(
+      .FIFO_DEPTH(FIFO_DEPTH_TX),
+      .DATA_WIDTH(DATA_WIDTH_TX)
+      )
+      fifo_tx
+     (
+      .w_data(i_w_data),
+      .winc(w_fifo_w_inc),
+      .w_clk(i_clk),
+      .wrst_n(w_fifo_w_rst),
+      .wfull(w_fifo_full),
+      .r_data(o_r_data),
+      .rinc(w_fifo_r_inc),
+      .rempty(w_fifo_empty),
+      .r_clk(i_clk),
+      .rrst_n(w_fifo_r_rst)
+      );
+
 
   UCIE_ctl_TX_FSM # (
     .UCIE_ACTIVE (UCIE_ACTIVE)
