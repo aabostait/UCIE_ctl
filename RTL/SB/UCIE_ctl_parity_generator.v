@@ -2,7 +2,7 @@
 //  This module is implemented to:-                                 //
 //  -- generate dp and cp (data and control parities)               //
 // **************************************************************** //
-
+`include "./defines.svh"
 module UCIE_ctl_parity_generator(
     input                 i_clk,
     input                 i_rst,

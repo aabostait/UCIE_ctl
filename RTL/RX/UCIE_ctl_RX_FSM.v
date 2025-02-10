@@ -1,3 +1,4 @@
+`include "./defines.svh"
 module UCIE_ctl_RX_FSM(
   
   input wire        i_clk,

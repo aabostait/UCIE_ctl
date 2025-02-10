@@ -3,9 +3,9 @@
 //  -- obtain packet sending for the msg phases                     //
 //  -- supporting NC parameter                                      //
 // **************************************************************** //
-
+`include "./defines.svh"
 module UCIE_ctl_sb_tx_packet_sender #(
-    parameter NC = 8
+    parameter NC = `NC
 )(
     input                    i_clk,
     input                    i_rst,

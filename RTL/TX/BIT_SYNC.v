@@ -1,6 +1,7 @@
+`include "./defines.svh"
 module BIT_SYNC (clk,rst,IN,OUT);
 	
-	parameter N=2;
+	parameter N =` NUM_OF_STAGES;
 
 	input clk,rst;
 	input IN;

@@ -1,6 +1,7 @@
+`include "./defines.svh"
 module binary_to_gray (binary,gray);
 	
-	parameter POINTER_WIDTH=4;
+	parameter POINTER_WIDTH = `TX_POINTER;
 
 	input [POINTER_WIDTH-1:0] binary;
 	output reg [POINTER_WIDTH-1:0] gray;

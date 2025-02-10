@@ -1,4 +1,5 @@
-module UCIE_ctl_RX_buffer #(parameter NBYTES=8 , DEPTH=4)(
+`include "./defines.svh"
+module UCIE_ctl_RX_buffer #(parameter NBYTES=`NBYTES , DEPTH=`RX_DEPTH)(
   
   input wire                    i_clk,
   input wire                    i_rst,

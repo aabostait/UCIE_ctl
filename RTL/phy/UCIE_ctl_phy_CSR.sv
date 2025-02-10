@@ -1,6 +1,7 @@
+`include "./defines.svh"
 module UCIE_ctl_phy_CSR(i_clk, i_rst_n, i_clear_start_training_bit,
 	i_WR, i_WDATA, i_addr, o_start_ucie_link_training);
-	parameter WIDTH = 8, DEPTH = 256;
+	parameter WIDTH = `CSR_WIDTH, DEPTH = `CSR_DEPTH;
 
 	input i_clk, i_rst_n;
 	input i_clear_start_training_bit;

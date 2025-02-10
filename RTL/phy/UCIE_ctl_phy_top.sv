@@ -1,5 +1,6 @@
+`include "./defines.svh"
 module UCIE_ctl_phy_top # (
-    parameter NBYTES = 8 , parameter NC = 32) 
+    parameter NBYTES = `NBYTES , parameter NC = `NC) 
  (
  // Clock and reset
   input  bit                     i_clk,

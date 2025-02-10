@@ -1,8 +1,9 @@
+`include "./defines.svh"
 module FIFO_TOP (w_data,winc,w_clk,wrst_n,wfull,r_data,rinc,rempty,r_clk,rrst_n);
 
-	parameter FIFO_DEPTH=8;
-	parameter DATA_WIDTH=8;
-	parameter N=2;//for synchronizer
+	parameter FIFO_DEPTH = `TX_DEPTH;
+	parameter DATA_WIDTH = `NBYTES;
+	parameter N = `NUM_OF_STAGES;//for synchronizer
 
 	localparam POINTER_WIDTH= $clog2(FIFO_DEPTH)+1;
 

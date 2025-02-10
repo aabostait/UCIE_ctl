@@ -2,9 +2,9 @@
 //  This module is implemented to:-                                   //
 //  -- control all the sb_tx module operation control signals/outputs //
 // ****************************************************************** //
-
+`include "./defines.svh"
 module UCIE_ctl_sb_tx_fsm #(
-  parameter NC = 8
+  parameter NC = `NC
 )(
     input               i_clk,
     input               i_rst,

@@ -1,5 +1,6 @@
+`include "./defines.svh"
 module UCIE_ctl_phy_sb_msg_interface_RX # (
-    parameter NC = 32) (
+    parameter NC = `NC) (
     // Clock and reset
     input  bit                     i_clk,
     input  bit                     i_rst_n,

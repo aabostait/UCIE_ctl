@@ -1,3 +1,4 @@
+`include "./defines.svh"
 module UCIE_ctl_Logging_FSM(
   // --------------- Inputs ---------------- //
   input         i_clk,

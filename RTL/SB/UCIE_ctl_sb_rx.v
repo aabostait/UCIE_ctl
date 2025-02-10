@@ -1,5 +1,6 @@
+`include "./defines.svh"
 module UCIE_ctl_sb_rx #(
-  parameter N = 32 // Default width of the input data
+  parameter N = `NC // Default width of the input data
 ) (
   input  wire         i_clk,                     // Clock signal
   input  wire         i_rst,                     // Reset signal (active low)

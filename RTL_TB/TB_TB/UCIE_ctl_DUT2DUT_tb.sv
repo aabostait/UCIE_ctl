@@ -1,12 +1,13 @@
+`include "./defines.svh"
 module UCIE_ctl_DUT2DUT_tb ();
 import UCIE_ctl_shared_pkg::*;
 
     parameter     CLK_PERIOD    = 10 ;
-    parameter     NBYTES        = 8  ; 
-    parameter     NC            = 32 ;
+    parameter     NBYTES        = `NBYTES  ; 
+    parameter     NC            = `NC ;
     parameter     UCIE_ACTIVE   = 1  ;                          
-    parameter     DATA_WIDTH_TX = 64 ;
-    parameter     FIFO_DEPTH_TX = 8  ;
+    parameter     DATA_WIDTH_TX = `TX_WIDTH ;
+    parameter     FIFO_DEPTH_TX = `TX_DEPTH  ;
 
     ////////////////////////////////////////////////////////    START OF PORTS /////////////////////////////////////////////////////////    
 

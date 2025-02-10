@@ -2,9 +2,9 @@
 //  This module is implemented to:-                              //
 //  -- Wrap up the SB_tx and SB_rx in a top SB module            //
 // ************************************************************* //
-
+`include "./defines.svh"
 module UCIE_ctl_sb_top # (
-  parameter NC  =   32
+  parameter NC  =   `NC
 )(
 // ------------------------------------------------ Global domains
   input             i_clk,

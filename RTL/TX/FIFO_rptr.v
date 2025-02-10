@@ -1,6 +1,7 @@
+`include "./defines.svh"
 module FIFO_rptr (r_clk,rrst_n,rinc,rempty,r_addr,gray_rptr,gray_wptr);
 	
-	parameter POINTER_WIDTH=4;
+	parameter POINTER_WIDTH=`TX_POINTER;
 
 	input r_clk,rrst_n;
 	input rinc;

@@ -1,3 +1,4 @@
+`include "./defines.svh"
 module UCIE_ctl_sb_rx_fsm
 (
   input        i_clk,

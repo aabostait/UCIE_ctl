@@ -1,4 +1,5 @@
-module UCIE_ctl_RX_TOP #( parameter NBYTES=8)(
+`include "./defines.svh"
+module UCIE_ctl_RX_TOP #( parameter NBYTES=`NBYTES)(
   
   input wire                    i_clk,
   input wire                    i_rst,

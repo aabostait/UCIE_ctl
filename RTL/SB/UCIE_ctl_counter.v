@@ -1,3 +1,4 @@
+`include "./defines.svh"
 module UCIE_ctl_counter #(
   parameter N = 16 // Default value of N
 ) (

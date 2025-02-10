@@ -1,7 +1,8 @@
+`include "./defines.svh"
 module BUS_SYNC (clk,rst,IN,OUT);
 	
-	parameter N=2;
-	parameter POINTER_WIDTH=4;
+	parameter N = `NUM_OF_STAGES;
+	parameter POINTER_WIDTH=`TX_POINTER;
 
 	input clk,rst;
 	input [POINTER_WIDTH-1:0] IN;

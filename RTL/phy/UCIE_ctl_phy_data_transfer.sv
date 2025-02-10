@@ -1,5 +1,6 @@
+`include "./defines.svh"
   module UCIE_ctl_phy_data_transfer # (
-  	parameter NBYTES = 8) (
+  	parameter NBYTES = `NBYTES) (
 
    // Clock and reset
    input  bit                     i_clk,

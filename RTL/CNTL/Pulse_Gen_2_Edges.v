@@ -1,3 +1,4 @@
+`include "./defines.svh"
 module Pulse_Gen_2_Edges (clk,rst,in,out);
 	
 	parameter WIDTH=8;

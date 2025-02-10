@@ -5,7 +5,7 @@
 //  -- implement connected advcap data buffers to analyser          //
 //  -- phase build and MUXing                                       //
 // **************************************************************** //
-
+`include "./defines.svh"
 module UCIE_ctl_packet_builder(
     input   wire            i_clk,
     input   wire            i_rst,

@@ -1,7 +1,8 @@
+`include "./defines.svh"
 module FIFO_Memory (w_clk,rst,w_data,w_en,w_addr,r_addr,r_data);
 	
-	parameter FIFO_DEPTH=8;
-	parameter DATA_WIDTH=8;
+	parameter FIFO_DEPTH = `TX_DEPTH;
+	parameter DATA_WIDTH = `NBYTES;
 
 	input [DATA_WIDTH-1:0] w_data;
 	input w_en;

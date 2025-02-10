@@ -1,4 +1,4 @@
-
+`include "./defines.svh"
 module UCIE_ctl_TX_FSM (
 	rst_n				,
 	i_fdi_pl_state_sts	,

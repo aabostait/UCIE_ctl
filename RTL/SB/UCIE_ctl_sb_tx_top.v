@@ -2,8 +2,8 @@
 //  This module is implemented to:-                                           //
 //  -- Connect: FSM, pakcet builder and packet sender blocks in top sb_tx mod //
 // ************************************************************************** //
-
-module UCIE_ctl_sb_tx_top # (parameter NC = 16)(
+`include "./defines.svh"
+module UCIE_ctl_sb_tx_top # (parameter NC = `NC)(
     input   wire            i_clk,
     input   wire            i_rst,
     // CTL mod interface signals

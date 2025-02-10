@@ -3,7 +3,7 @@
 //  -- analysing decoded msg sent by ctrl module                    //
 //  -- generate control signal and msg parts addresses              //
 // **************************************************************** //
-
+`include "./defines.svh"
 module UCIE_ctl_sb_decoded_msg_analyser(
     // Global domains
     input   wire              i_clk,

@@ -1,7 +1,8 @@
+`include "./defines.svh"
 module UCIE_ctl_TX #(
   parameter     UCIE_ACTIVE = 1  ,                           
-  parameter     DATA_WIDTH_TX = 64 ,
-  parameter     FIFO_DEPTH_TX  = 8                         
+  parameter     DATA_WIDTH_TX = `TX_WIDTH ,
+  parameter     FIFO_DEPTH_TX  = `TX_DEPTH                         
  )
  (
   input 			i_clk,

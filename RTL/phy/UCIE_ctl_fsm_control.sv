@@ -1,6 +1,6 @@
-
+`include "./defines.svh"
 module UCIE_ctl_phy_fsm_control # (
-    parameter NBYTES = 8) 
+    parameter NBYTES = `NBYTES) 
 (
   // Clock and reset
   input  bit                     i_clk,

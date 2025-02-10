@@ -1,5 +1,6 @@
+`include "./defines.svh"
 module UCIE_ctl_shift_register #(
-  parameter N = 32  // Width of the input data (can vary)
+  parameter N = `NC  // Width of the input data (can vary)
 ) (
   input  wire           i_clk,      // Clock signal
   input  wire           i_reset,    // Reset signal (active high)

@@ -1,9 +1,10 @@
+`include "./defines.svh"
 module UCIE_ctl_TOP_DUT2DUT #  (
-	parameter 	  NBYTES 		= 8  , 
-	parameter 	  NC 			= 32 ,
+	parameter 	  NBYTES 		= `NBYTES  , 
+	parameter 	  NC 			= `NC ,
 	parameter     UCIE_ACTIVE 	= 1  ,
-	parameter     DATA_WIDTH_TX = 64 ,
-  	parameter     FIFO_DEPTH_TX = 8    
+	parameter     DATA_WIDTH_TX = `TX_WIDTH ,
+  	parameter     FIFO_DEPTH_TX = `TX_DEPTH    
                            
   	)
 

@@ -2,7 +2,7 @@
 //  This module is implemented to:-                                 //
 //  -- save msg code parts in a RO registers                        //
 // **************************************************************** //
-
+`include "./defines.svh"
 module UCIE_ctl_sb_reg_files(
     //  INPUTS
     input                                       i_clk,
