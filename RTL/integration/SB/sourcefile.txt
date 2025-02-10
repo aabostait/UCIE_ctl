@@ -1,0 +1,12 @@
+./SB/UCIE_ctl_counter.v
+./SB/UCIE_ctl_packet_builder.v
+./SB/UCIE_ctl_parity_generator.v
+./SB/UCIE_ctl_sb_decoded_msg_analyser.v
+./SB/UCIE_ctl_sb_reg_files.v
+./SB/UCIE_ctl_sb_rx.v
+./SB/UCIE_ctl_sb_rx_fsm.v
+./SB/UCIE_ctl_sb_top.v
+./SB/UCIE_ctl_sb_tx_fsm.v
+./SB/UCIE_ctl_sb_tx_packet_sender.v
+./SB/UCIE_ctl_sb_tx_top.v
+./SB/UCIE_ctl_shift_register.v

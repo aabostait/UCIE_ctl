@@ -1,0 +1,9 @@
+./TX/binary_to_gray.v
+./TX/BIT_SYNC.v
+./TX/BUS_SYNC.v
+./TX/FIFO_Memory.v
+./TX/FIFO_rptr.v
+./TX/FIFO_TOP.v
+./TX/FIFO_wptr.v
+./TX/UCIE_ctl_TX.v
+./TX/UCIE_ctl_TX_FSM.v

@@ -1,0 +1,7 @@
+./phy/UCIE_ctl_fsm_control.sv
+./phy/UCIE_ctl_phy_data_transfer.sv
+./phy/UCIE_ctl_phy_sb_msg_interface.sv
+./phy/UCIE_ctl_phy_top.sv
+./phy/UCIE_ctl_phy_sb_msg_interface_RX.sv
+./phy/UCIE_ctl_phy_sb_msg_interface_TX.sv
+./phy/UCIE_ctl_phy_CSR.sv

@@ -1,0 +1,1090 @@
+# vsim -voptargs="+acc" work.UCIE_ctl_DUT2DUT_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 16:59:55 on Feb 04,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading sv_std.std
+# Loading work.UCIE_ctl_shared_pkg(fast)
+# Loading work.UCIE_ctl_DUT2DUT_tb(fast)
+# Loading work.UCIE_ctl_TOP_DUT2DUT(fast)
+# Loading work.UCIE_ctl_TOP(fast)
+# Loading work.UCIE_ctl_CNTL(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# Loading work.UCIE_ctl_Logging_FSM(fast)
+# Loading work.Pulse_Gen(fast)
+# Loading work.Pulse_Gen_2_Edges(fast)
+# Loading work.UCIE_ctl_CSR(fast)
+# Loading work.UCIE_ctl_sb_top(fast)
+# Loading work.UCIE_ctl_sb_tx_top(fast)
+# Loading work.UCIE_ctl_packet_builder(fast)
+# Loading work.UCIE_ctl_sb_decoded_msg_analyser(fast)
+# Loading work.UCIE_ctl_sb_reg_files(fast)
+# Loading work.UCIE_ctl_parity_generator(fast)
+# Loading work.UCIE_ctl_sb_tx_fsm(fast)
+# Loading work.UCIE_ctl_sb_tx_packet_sender(fast)
+# Loading work.UCIE_ctl_sb_rx(fast)
+# Loading work.UCIE_ctl_counter(fast)
+# Loading work.UCIE_ctl_shift_register(fast)
+# Loading work.UCIE_ctl_sb_rx_fsm(fast)
+# Loading work.UCIE_ctl_TX(fast)
+# Loading work.FIFO_TOP(fast)
+# Loading work.FIFO_Memory(fast)
+# Loading work.FIFO_rptr(fast)
+# Loading work.binary_to_gray(fast)
+# Loading work.FIFO_wptr(fast)
+# Loading work.BUS_SYNC(fast)
+# Loading work.BIT_SYNC(fast)
+# Loading work.UCIE_ctl_TX_FSM(fast)
+# Loading work.UCIE_ctl_RX_TOP(fast)
+# Loading work.UCIE_ctl_RX_buffer(fast)
+# Loading work.UCIE_ctl_RX_FSM(fast)
+# Loading work.UCIE_ctl_phy_top(fast)
+# Loading work.UCIE_ctl_phy_fsm_control(fast)
+# Loading work.UCIE_ctl_phy_data_transfer(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_TX(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_RX(fast)
+# Loading work.UCIE_ctl_phy_CSR(fast)
+# Loading work.UCIE_ctl_TOP(fast__1)
+# Loading work.UCIE_ctl_CSR(fast__1)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: LAP ME  Hostname: DESKTOP-A4L7G1R  ProcessID: 15340
+#           Attempting to use alternate WLF file "./wlftg8i7m6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftg8i7m6
+# [0] *********************************************************** Conventional Active Entry after Reset Started ***********************************************************
+# 
+# [0] ***************************************************************** Reset Asserted *****************************************************************
+# 
+# [50] **************************************************************** Reset Deasserted ****************************************************************
+# 
+# [550] **************************************************************** Conventional Active Entry Test Succeeded ****************************************************************
+# 
+# [950] ***************************************************************** Retrain Flow Diagram Test Started ***************************************************************
+# 
+# [950] ************************************************************* Retrain Entry triggered by (SW) Started *************************************************************
+# 
+# [1280] **************************************************************** Retrain Entry Succeeded ****************************************************************
+# 
+# [1280] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [1820] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [1820] ***************************************************************** Retrain Flow Diagram Test Succeeded ***************************************************************
+# 
+# [1820] ***************************************************************** LinkReset Flow Diagram Test Started ***************************************************************
+# 
+# [1820] ******************************************************** LinkReset Entry triggered by (Protocol) Started ********************************************************
+# 
+# [2330] **************************************************************** LinkReset Entry Succeeded ****************************************************************
+# 
+# [2330] ************************************************************* LinkReset Entry triggered by (Protocol) Started *************************************************************
+# 
+# [2960] ****************************************************************  ACTIVE Entry Succeeded ****************************************************************
+# 
+# [2960] ***************************************************************** LinkReset Flow Diagram Test Succeeded ***************************************************************
+# 
+# [2960] ***************************************************************** LinkError Flow Diagram Test Started ***************************************************************
+# 
+# [2960] ********************************************** LinkError Entry triggered by (SW - UCIe_Start_Link_Training 0->1) Started **********************************************
+# 
+# [3040] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [3140] ************************************************************* Active Entry triggered by (Protocol) Started *************************************************************
+# 
+# [3660] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [3660] ****************************************************** LinkError Entry triggered by (ADVCAP MisMatch) Started ******************************************************
+# 
+# [6140] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [7910] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [8440] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [8440] ***************************************************************** LinkError Flow Diagram Test Succeeded ***************************************************************
+# 
+# ****************************** NUMBER OF PASSED TESTS = 4 *************************************
+# ** Note: $stop    : ./TB/UCIE_ctl_DUT2DUT_tb.sv(975)
+#    Time: 8450 ns  Iteration: 1  Instance: /UCIE_ctl_DUT2DUT_tb
+# Break in Module UCIE_ctl_DUT2DUT_tb at ./TB/UCIE_ctl_DUT2DUT_tb.sv line 975
+DO 
+# invalid command name "DO"
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 17:51:30 on Feb 04,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# 
+# Top level modules:
+# 	UCIE_ctl_DUT2DUT_tb
+# End time: 17:51:30 on Feb 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# End time: 17:52:33 on Feb 04,2025, Elapsed time: 0:52:38
+# Errors: 3, Warnings: 5
+# vsim -voptargs="+acc" work.UCIE_ctl_DUT2DUT_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 17:52:33 on Feb 04,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.UCIE_ctl_shared_pkg(fast)
+# Loading work.UCIE_ctl_DUT2DUT_tb(fast)
+# Loading work.UCIE_ctl_TOP_DUT2DUT(fast)
+# Loading work.UCIE_ctl_TOP(fast)
+# Loading work.UCIE_ctl_CNTL(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# Loading work.UCIE_ctl_Logging_FSM(fast)
+# Loading work.Pulse_Gen(fast)
+# Loading work.Pulse_Gen_2_Edges(fast)
+# Loading work.UCIE_ctl_CSR(fast)
+# Loading work.UCIE_ctl_sb_top(fast)
+# Loading work.UCIE_ctl_sb_tx_top(fast)
+# Loading work.UCIE_ctl_packet_builder(fast)
+# Loading work.UCIE_ctl_sb_decoded_msg_analyser(fast)
+# Loading work.UCIE_ctl_sb_reg_files(fast)
+# Loading work.UCIE_ctl_parity_generator(fast)
+# Loading work.UCIE_ctl_sb_tx_fsm(fast)
+# Loading work.UCIE_ctl_sb_tx_packet_sender(fast)
+# Loading work.UCIE_ctl_sb_rx(fast)
+# Loading work.UCIE_ctl_counter(fast)
+# Loading work.UCIE_ctl_shift_register(fast)
+# Loading work.UCIE_ctl_sb_rx_fsm(fast)
+# Loading work.UCIE_ctl_TX(fast)
+# Loading work.FIFO_TOP(fast)
+# Loading work.FIFO_Memory(fast)
+# Loading work.FIFO_rptr(fast)
+# Loading work.binary_to_gray(fast)
+# Loading work.FIFO_wptr(fast)
+# Loading work.BUS_SYNC(fast)
+# Loading work.BIT_SYNC(fast)
+# Loading work.UCIE_ctl_TX_FSM(fast)
+# Loading work.UCIE_ctl_RX_TOP(fast)
+# Loading work.UCIE_ctl_RX_buffer(fast)
+# Loading work.UCIE_ctl_RX_FSM(fast)
+# Loading work.UCIE_ctl_phy_top(fast)
+# Loading work.UCIE_ctl_phy_fsm_control(fast)
+# Loading work.UCIE_ctl_phy_data_transfer(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_TX(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_RX(fast)
+# Loading work.UCIE_ctl_phy_CSR(fast)
+# Loading work.UCIE_ctl_TOP(fast__1)
+# Loading work.UCIE_ctl_CSR(fast__1)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: LAP ME  Hostname: DESKTOP-A4L7G1R  ProcessID: 15340
+#           Attempting to use alternate WLF file "./wlft1qijvc".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1qijvc
+# [0] *********************************************************** Conventional Active Entry after Reset Started ***********************************************************
+# 
+# [0] ***************************************************************** Reset Asserted *****************************************************************
+# 
+# [50] **************************************************************** Reset Deasserted ****************************************************************
+# 
+# [550] **************************************************************** Conventional Active Entry Test Succeeded ****************************************************************
+# 
+# [950] ***************************************************************** Retrain Flow Diagram Test Started ***************************************************************
+# 
+# [950] ************************************************************* Retrain Entry triggered by (SW) Started *************************************************************
+# 
+# [1280] **************************************************************** Retrain Entry Succeeded ****************************************************************
+# 
+# [1280] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [1820] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [1820] ***************************************************************** Retrain Flow Diagram Test Succeeded ***************************************************************
+# 
+# [1820] ***************************************************************** LinkReset Flow Diagram Test Started ***************************************************************
+# 
+# [1820] ******************************************************** LinkReset Entry triggered by (Protocol) Started ********************************************************
+# 
+# [2330] **************************************************************** LinkReset Entry Succeeded ****************************************************************
+# 
+# [2330] ************************************************************* LinkReset Entry triggered by (Protocol) Started *************************************************************
+# 
+# [2960] ****************************************************************  ACTIVE Entry Succeeded ****************************************************************
+# 
+# [2960] ***************************************************************** LinkReset Flow Diagram Test Succeeded ***************************************************************
+# 
+# [2960] ***************************************************************** LinkError Flow Diagram Test Started ***************************************************************
+# 
+# [2960] ********************************************** LinkError Entry triggered by (SW - UCIe_Start_Link_Training 0->1) Started **********************************************
+# 
+# [3040] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [3140] ************************************************************* Active Entry triggered by (Protocol) Started *************************************************************
+# 
+# [3660] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [3660] ****************************************************** LinkError Entry triggered by (ADVCAP MisMatch) Started ******************************************************
+# 
+# [6140] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [7910] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [8440] ***************************************************************** Active Entry Failed ***************************************************************
+# 
+# ** Note: $stop    : ./TB/UCIE_ctl_DUT2DUT_tb.sv(821)
+#    Time: 8440 ns  Iteration: 1  Instance: /UCIE_ctl_DUT2DUT_tb
+# Break in Task LinkError_Flow_Diagram_test at ./TB/UCIE_ctl_DUT2DUT_tb.sv line 821
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 17:57:47 on Feb 04,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# 
+# Top level modules:
+# 	UCIE_ctl_DUT2DUT_tb
+# End time: 17:57:47 on Feb 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# End time: 17:58:54 on Feb 04,2025, Elapsed time: 0:06:21
+# Errors: 3, Warnings: 3
+# vsim -voptargs="+acc" work.UCIE_ctl_DUT2DUT_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 17:58:54 on Feb 04,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.UCIE_ctl_shared_pkg(fast)
+# Loading work.UCIE_ctl_DUT2DUT_tb(fast)
+# Loading work.UCIE_ctl_TOP_DUT2DUT(fast)
+# Loading work.UCIE_ctl_TOP(fast)
+# Loading work.UCIE_ctl_CNTL(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# Loading work.UCIE_ctl_Logging_FSM(fast)
+# Loading work.Pulse_Gen(fast)
+# Loading work.Pulse_Gen_2_Edges(fast)
+# Loading work.UCIE_ctl_CSR(fast)
+# Loading work.UCIE_ctl_sb_top(fast)
+# Loading work.UCIE_ctl_sb_tx_top(fast)
+# Loading work.UCIE_ctl_packet_builder(fast)
+# Loading work.UCIE_ctl_sb_decoded_msg_analyser(fast)
+# Loading work.UCIE_ctl_sb_reg_files(fast)
+# Loading work.UCIE_ctl_parity_generator(fast)
+# Loading work.UCIE_ctl_sb_tx_fsm(fast)
+# Loading work.UCIE_ctl_sb_tx_packet_sender(fast)
+# Loading work.UCIE_ctl_sb_rx(fast)
+# Loading work.UCIE_ctl_counter(fast)
+# Loading work.UCIE_ctl_shift_register(fast)
+# Loading work.UCIE_ctl_sb_rx_fsm(fast)
+# Loading work.UCIE_ctl_TX(fast)
+# Loading work.FIFO_TOP(fast)
+# Loading work.FIFO_Memory(fast)
+# Loading work.FIFO_rptr(fast)
+# Loading work.binary_to_gray(fast)
+# Loading work.FIFO_wptr(fast)
+# Loading work.BUS_SYNC(fast)
+# Loading work.BIT_SYNC(fast)
+# Loading work.UCIE_ctl_TX_FSM(fast)
+# Loading work.UCIE_ctl_RX_TOP(fast)
+# Loading work.UCIE_ctl_RX_buffer(fast)
+# Loading work.UCIE_ctl_RX_FSM(fast)
+# Loading work.UCIE_ctl_phy_top(fast)
+# Loading work.UCIE_ctl_phy_fsm_control(fast)
+# Loading work.UCIE_ctl_phy_data_transfer(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_TX(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_RX(fast)
+# Loading work.UCIE_ctl_phy_CSR(fast)
+# Loading work.UCIE_ctl_TOP(fast__1)
+# Loading work.UCIE_ctl_CSR(fast__1)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: LAP ME  Hostname: DESKTOP-A4L7G1R  ProcessID: 15340
+#           Attempting to use alternate WLF file "./wlfted0ta0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfted0ta0
+# [0] *********************************************************** Conventional Active Entry after Reset Started ***********************************************************
+# 
+# [0] ***************************************************************** Reset Asserted *****************************************************************
+# 
+# [50] **************************************************************** Reset Deasserted ****************************************************************
+# 
+# [550] ***************************************************************** Active Entry Failed ***************************************************************
+# 
+# ** Note: $stop    : ./TB/UCIE_ctl_DUT2DUT_tb.sv(948)
+#    Time: 550 ns  Iteration: 1  Instance: /UCIE_ctl_DUT2DUT_tb
+# Break in Module UCIE_ctl_DUT2DUT_tb at ./TB/UCIE_ctl_DUT2DUT_tb.sv line 948
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 18:00:13 on Feb 04,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# 
+# Top level modules:
+# 	UCIE_ctl_DUT2DUT_tb
+# End time: 18:00:13 on Feb 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# o
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# End time: 18:00:52 on Feb 04,2025, Elapsed time: 0:01:58
+# Errors: 3, Warnings: 3
+# vsim -voptargs="+acc" work.UCIE_ctl_DUT2DUT_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 18:00:52 on Feb 04,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.UCIE_ctl_shared_pkg(fast)
+# Loading work.UCIE_ctl_DUT2DUT_tb(fast)
+# Loading work.UCIE_ctl_TOP_DUT2DUT(fast)
+# Loading work.UCIE_ctl_TOP(fast)
+# Loading work.UCIE_ctl_CNTL(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# Loading work.UCIE_ctl_Logging_FSM(fast)
+# Loading work.Pulse_Gen(fast)
+# Loading work.Pulse_Gen_2_Edges(fast)
+# Loading work.UCIE_ctl_CSR(fast)
+# Loading work.UCIE_ctl_sb_top(fast)
+# Loading work.UCIE_ctl_sb_tx_top(fast)
+# Loading work.UCIE_ctl_packet_builder(fast)
+# Loading work.UCIE_ctl_sb_decoded_msg_analyser(fast)
+# Loading work.UCIE_ctl_sb_reg_files(fast)
+# Loading work.UCIE_ctl_parity_generator(fast)
+# Loading work.UCIE_ctl_sb_tx_fsm(fast)
+# Loading work.UCIE_ctl_sb_tx_packet_sender(fast)
+# Loading work.UCIE_ctl_sb_rx(fast)
+# Loading work.UCIE_ctl_counter(fast)
+# Loading work.UCIE_ctl_shift_register(fast)
+# Loading work.UCIE_ctl_sb_rx_fsm(fast)
+# Loading work.UCIE_ctl_TX(fast)
+# Loading work.FIFO_TOP(fast)
+# Loading work.FIFO_Memory(fast)
+# Loading work.FIFO_rptr(fast)
+# Loading work.binary_to_gray(fast)
+# Loading work.FIFO_wptr(fast)
+# Loading work.BUS_SYNC(fast)
+# Loading work.BIT_SYNC(fast)
+# Loading work.UCIE_ctl_TX_FSM(fast)
+# Loading work.UCIE_ctl_RX_TOP(fast)
+# Loading work.UCIE_ctl_RX_buffer(fast)
+# Loading work.UCIE_ctl_RX_FSM(fast)
+# Loading work.UCIE_ctl_phy_top(fast)
+# Loading work.UCIE_ctl_phy_fsm_control(fast)
+# Loading work.UCIE_ctl_phy_data_transfer(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_TX(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_RX(fast)
+# Loading work.UCIE_ctl_phy_CSR(fast)
+# Loading work.UCIE_ctl_TOP(fast__1)
+# Loading work.UCIE_ctl_CSR(fast__1)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: LAP ME  Hostname: DESKTOP-A4L7G1R  ProcessID: 15340
+#           Attempting to use alternate WLF file "./wlftegtm0w".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftegtm0w
+# [0] *********************************************************** Conventional Active Entry after Reset Started ***********************************************************
+# 
+# [0] ***************************************************************** Reset Asserted *****************************************************************
+# 
+# [50] **************************************************************** Reset Deasserted ****************************************************************
+# 
+# [550] ***************************************************************** Active Entry Failed ***************************************************************
+# 
+# [950] ***************************************************************** Retrain Flow Diagram Test Started ***************************************************************
+# 
+# [950] ************************************************************* Retrain Entry triggered by (SW) Started *************************************************************
+# 
+# [1280] ****************************************************************** Retrain Entry Failed **************************************************************
+# 
+# ** Note: $stop    : ./TB/UCIE_ctl_DUT2DUT_tb.sv(671)
+#    Time: 1280 ns  Iteration: 1  Instance: /UCIE_ctl_DUT2DUT_tb
+# Break in Task Retrain_Flow_Diagram_test at ./TB/UCIE_ctl_DUT2DUT_tb.sv line 671
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:56:36 on Feb 05,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(977): (vlog-2730) Undefined variable: 'clk'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(981): (vlog-2730) Undefined variable: 'i_csr_ADVCAP'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(982): (vlog-2730) Undefined variable: 'i_sb_pl_valid'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(983): (vlog-2730) Undefined variable: 'i_sb_pl_decode'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(984): (vlog-2730) Undefined variable: 'i_sb_pl_adv_cap_val'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(987): (vlog-2730) Undefined variable: 'o_fdi_pl_protocol'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(1011): (vlog-2730) Undefined variable: 'o_fdi_pl_protocol_vld'.
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# End time: 01:56:37 on Feb 05,2025, Elapsed time: 0:00:01
+# Errors: 7, Warnings: 0
+# ** Error: D:/verilog/qyes/win64/vlog failed.
+# Error in macro ./run_sim.do line 3
+# D:/verilog/qyes/win64/vlog failed.
+#     while executing
+# "vlog -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt \
+#  -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt ..."
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 01:59:14 on Feb 05,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(977): (vlog-2730) Undefined variable: 'clk'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(981): (vlog-2730) Undefined variable: 'i_csr_ADVCAP'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(982): (vlog-2730) Undefined variable: 'i_sb_pl_valid'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(983): (vlog-2730) Undefined variable: 'i_sb_pl_decode'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(984): (vlog-2730) Undefined variable: 'i_sb_pl_adv_cap_val'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(987): (vlog-2730) Undefined variable: 'o_fdi_pl_protocol'.
+# ** Error: ./TB/UCIE_ctl_DUT2DUT_tb.sv(1011): (vlog-2730) Undefined variable: 'o_fdi_pl_protocol_vld'.
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# End time: 01:59:14 on Feb 05,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: D:/verilog/qyes/win64/vlog failed.
+# Error in macro ./run_sim.do line 3
+# D:/verilog/qyes/win64/vlog failed.
+#     while executing
+# "vlog -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt \
+#  -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt ..."
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:09:54 on Feb 05,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# ** Error: (vlog-13069) ./TB/UCIE_ctl_DUT2DUT_tb.sv(943): near "repeat": syntax error, unexpected repeat, expecting ';'.
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# End time: 22:09:55 on Feb 05,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: D:/verilog/qyes/win64/vlog failed.
+# Error in macro ./run_sim.do line 3
+# D:/verilog/qyes/win64/vlog failed.
+#     while executing
+# "vlog -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt \
+#  -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt ..."
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:10:31 on Feb 05,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# 
+# Top level modules:
+# 	UCIE_ctl_DUT2DUT_tb
+# End time: 22:10:31 on Feb 05,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# End time: 22:11:17 on Feb 05,2025, Elapsed time: 28:10:25
+# Errors: 6, Warnings: 3
+# vsim -voptargs="+acc" work.UCIE_ctl_DUT2DUT_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 22:11:17 on Feb 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.UCIE_ctl_shared_pkg(fast)
+# Loading work.UCIE_ctl_DUT2DUT_tb(fast)
+# Loading work.UCIE_ctl_TOP_DUT2DUT(fast)
+# Loading work.UCIE_ctl_TOP(fast)
+# Loading work.UCIE_ctl_CNTL(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# Loading work.UCIE_ctl_Logging_FSM(fast)
+# Loading work.Pulse_Gen(fast)
+# Loading work.Pulse_Gen_2_Edges(fast)
+# Loading work.UCIE_ctl_CSR(fast)
+# Loading work.UCIE_ctl_sb_top(fast)
+# Loading work.UCIE_ctl_sb_tx_top(fast)
+# Loading work.UCIE_ctl_packet_builder(fast)
+# Loading work.UCIE_ctl_sb_decoded_msg_analyser(fast)
+# Loading work.UCIE_ctl_sb_reg_files(fast)
+# Loading work.UCIE_ctl_parity_generator(fast)
+# Loading work.UCIE_ctl_sb_tx_fsm(fast)
+# Loading work.UCIE_ctl_sb_tx_packet_sender(fast)
+# Loading work.UCIE_ctl_sb_rx(fast)
+# Loading work.UCIE_ctl_counter(fast)
+# Loading work.UCIE_ctl_shift_register(fast)
+# Loading work.UCIE_ctl_sb_rx_fsm(fast)
+# Loading work.UCIE_ctl_TX(fast)
+# Loading work.FIFO_TOP(fast)
+# Loading work.FIFO_Memory(fast)
+# Loading work.FIFO_rptr(fast)
+# Loading work.binary_to_gray(fast)
+# Loading work.FIFO_wptr(fast)
+# Loading work.BUS_SYNC(fast)
+# Loading work.BIT_SYNC(fast)
+# Loading work.UCIE_ctl_TX_FSM(fast)
+# Loading work.UCIE_ctl_RX_TOP(fast)
+# Loading work.UCIE_ctl_RX_buffer(fast)
+# Loading work.UCIE_ctl_RX_FSM(fast)
+# Loading work.UCIE_ctl_phy_top(fast)
+# Loading work.UCIE_ctl_phy_fsm_control(fast)
+# Loading work.UCIE_ctl_phy_data_transfer(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_TX(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_RX(fast)
+# Loading work.UCIE_ctl_phy_CSR(fast)
+# Loading work.UCIE_ctl_TOP(fast__1)
+# Loading work.UCIE_ctl_CSR(fast__1)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: LAP ME  Hostname: DESKTOP-A4L7G1R  ProcessID: 15340
+#           Attempting to use alternate WLF file "./wlft24gc54".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft24gc54
+# [0] *********************************************************** Conventional Active Entry after Reset Started ***********************************************************
+# 
+# [0] ***************************************************************** Reset Asserted *****************************************************************
+# 
+# [50] **************************************************************** Reset Deasserted ****************************************************************
+# 
+# [550] **************************************************************** Conventional Active Entry Test Succeeded ****************************************************************
+# 
+# [950] ***************************************************************** Retrain Flow Diagram Test Started ***************************************************************
+# 
+# [950] ************************************************************* Retrain Entry triggered by (SW) Started *************************************************************
+# 
+# [1280] **************************************************************** Retrain Entry Succeeded ****************************************************************
+# 
+# [1280] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [1820] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [1820] ***************************************************************** Retrain Flow Diagram Test Succeeded ***************************************************************
+# 
+# [1820] ***************************************************************** LinkReset Flow Diagram Test Started ***************************************************************
+# 
+# [1820] ******************************************************** LinkReset Entry triggered by (Protocol) Started ********************************************************
+# 
+# [2330] **************************************************************** LinkReset Entry Succeeded ****************************************************************
+# 
+# [2330] ************************************************************* LinkReset Entry triggered by (Protocol) Started *************************************************************
+# 
+# [2960] ****************************************************************  ACTIVE Entry Succeeded ****************************************************************
+# 
+# [2960] ***************************************************************** LinkReset Flow Diagram Test Succeeded ***************************************************************
+# 
+# [2960] ***************************************************************** LinkError Flow Diagram Test Started ***************************************************************
+# 
+# [2960] ********************************************** LinkError Entry triggered by (SW - UCIe_Start_Link_Training 0->1) Started **********************************************
+# 
+# [3040] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [3140] ************************************************************* Active Entry triggered by (Protocol) Started *************************************************************
+# 
+# [3660] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [3660] ****************************************************** LinkError Entry triggered by (ADVCAP MisMatch) Started ******************************************************
+# 
+# [6140] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [7910] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [8440] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [8440] ***************************************************************** LinkError Flow Diagram Test Succeeded ***************************************************************
+# 
+# ****************************** NUMBER OF PASSED TESTS = 4 *************************************
+# ** Note: $stop    : ./TB/UCIE_ctl_DUT2DUT_tb.sv(979)
+#    Time: 8450 ns  Iteration: 1  Instance: /UCIE_ctl_DUT2DUT_tb
+# Break in Module UCIE_ctl_DUT2DUT_tb at ./TB/UCIE_ctl_DUT2DUT_tb.sv line 979
+do run_sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:23:16 on Feb 05,2025
+# vlog -reportprogress 300 -f ./CNTL/sourcefile.txt -f ./CSR/sourcefile.txt -f ./phy/sourcefile.txt -f ./RX/sourcefile.txt -f ./TX/sourcefile.txt -f ./SB/sourcefile.txt -f ./TB/sourcefile.txt -f ./TOP/sourcefile.txt "+cover" 
+# -- Compiling module Pulse_Gen
+# -- Compiling module Pulse_Gen_2_Edges
+# -- Compiling module Timer
+# -- Compiling module UCIE_ctl_CNTL
+# -- Compiling module UCIE_ctl_CNTL_FSM
+# -- Compiling module UCIE_ctl_Logging_FSM
+# -- Compiling module UCIE_ctl_CSR
+# -- Compiling module UCIE_ctl_phy_fsm_control
+# -- Compiling module UCIE_ctl_phy_data_transfer
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface
+# -- Compiling module UCIE_ctl_phy_top
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_RX
+# -- Compiling module UCIE_ctl_phy_sb_msg_interface_TX
+# -- Compiling module UCIE_ctl_phy_CSR
+# -- Compiling module UCIE_ctl_RX_buffer
+# -- Compiling module UCIE_ctl_RX_FSM
+# -- Compiling module UCIE_ctl_RX_TOP
+# -- Compiling module binary_to_gray
+# -- Compiling module BIT_SYNC
+# -- Compiling module BUS_SYNC
+# -- Compiling module FIFO_Memory
+# -- Compiling module FIFO_rptr
+# -- Compiling module FIFO_TOP
+# -- Compiling module FIFO_wptr
+# -- Compiling module UCIE_ctl_TX
+# -- Compiling module UCIE_ctl_TX_FSM
+# -- Compiling module UCIE_ctl_counter
+# -- Compiling module UCIE_ctl_packet_builder
+# -- Compiling module UCIE_ctl_parity_generator
+# -- Compiling module UCIE_ctl_sb_decoded_msg_analyser
+# -- Compiling module UCIE_ctl_sb_reg_files
+# -- Compiling module UCIE_ctl_sb_rx
+# -- Compiling module UCIE_ctl_sb_rx_fsm
+# -- Compiling module UCIE_ctl_sb_top
+# -- Compiling module UCIE_ctl_sb_tx_fsm
+# -- Compiling module UCIE_ctl_sb_tx_packet_sender
+# -- Compiling module UCIE_ctl_sb_tx_top
+# -- Compiling module UCIE_ctl_shift_register
+# -- Compiling package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_DUT2DUT_tb
+# -- Importing package UCIE_ctl_shared_pkg
+# -- Compiling module UCIE_ctl_TOP
+# -- Compiling module UCIE_ctl_TOP_DUT2DUT
+# 
+# Top level modules:
+# 	UCIE_ctl_DUT2DUT_tb
+# End time: 22:23:17 on Feb 05,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# o
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# End time: 22:24:15 on Feb 05,2025, Elapsed time: 0:12:58
+# Errors: 3, Warnings: 3
+# vsim -voptargs="+acc" work.UCIE_ctl_DUT2DUT_tb -coverage -classdebug -sv_seed 100 -fsmdebug -logfile full_transcript.log 
+# Start time: 22:24:16 on Feb 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.UCIE_ctl_shared_pkg(fast)
+# Loading work.UCIE_ctl_DUT2DUT_tb(fast)
+# Loading work.UCIE_ctl_TOP_DUT2DUT(fast)
+# Loading work.UCIE_ctl_TOP(fast)
+# Loading work.UCIE_ctl_CNTL(fast)
+# Loading work.UCIE_ctl_CNTL_FSM(fast)
+# Loading work.Timer(fast)
+# Loading work.UCIE_ctl_Logging_FSM(fast)
+# Loading work.Pulse_Gen(fast)
+# Loading work.Pulse_Gen_2_Edges(fast)
+# Loading work.UCIE_ctl_CSR(fast)
+# Loading work.UCIE_ctl_sb_top(fast)
+# Loading work.UCIE_ctl_sb_tx_top(fast)
+# Loading work.UCIE_ctl_packet_builder(fast)
+# Loading work.UCIE_ctl_sb_decoded_msg_analyser(fast)
+# Loading work.UCIE_ctl_sb_reg_files(fast)
+# Loading work.UCIE_ctl_parity_generator(fast)
+# Loading work.UCIE_ctl_sb_tx_fsm(fast)
+# Loading work.UCIE_ctl_sb_tx_packet_sender(fast)
+# Loading work.UCIE_ctl_sb_rx(fast)
+# Loading work.UCIE_ctl_counter(fast)
+# Loading work.UCIE_ctl_shift_register(fast)
+# Loading work.UCIE_ctl_sb_rx_fsm(fast)
+# Loading work.UCIE_ctl_TX(fast)
+# Loading work.FIFO_TOP(fast)
+# Loading work.FIFO_Memory(fast)
+# Loading work.FIFO_rptr(fast)
+# Loading work.binary_to_gray(fast)
+# Loading work.FIFO_wptr(fast)
+# Loading work.BUS_SYNC(fast)
+# Loading work.BIT_SYNC(fast)
+# Loading work.UCIE_ctl_TX_FSM(fast)
+# Loading work.UCIE_ctl_RX_TOP(fast)
+# Loading work.UCIE_ctl_RX_buffer(fast)
+# Loading work.UCIE_ctl_RX_FSM(fast)
+# Loading work.UCIE_ctl_phy_top(fast)
+# Loading work.UCIE_ctl_phy_fsm_control(fast)
+# Loading work.UCIE_ctl_phy_data_transfer(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_TX(fast)
+# Loading work.UCIE_ctl_phy_sb_msg_interface_RX(fast)
+# Loading work.UCIE_ctl_phy_CSR(fast)
+# Loading work.UCIE_ctl_TOP(fast__1)
+# Loading work.UCIE_ctl_CSR(fast__1)
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# o
+#        Unable to replace existing ini file (D:/GP/INTEGRATION4/INTEGRATION4/fdss.mpf).  File can not be renamed.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: LAP ME  Hostname: DESKTOP-A4L7G1R  ProcessID: 15340
+#           Attempting to use alternate WLF file "./wlftb51axs".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftb51axs
+# [0] *********************************************************** Conventional Active Entry after Reset Started ***********************************************************
+# 
+# [0] ***************************************************************** Reset Asserted *****************************************************************
+# 
+# [50] **************************************************************** Reset Deasserted ****************************************************************
+# 
+# [580] **************************************************************** Conventional Active Entry Test Succeeded ****************************************************************
+# 
+# [980] ***************************************************************** Retrain Flow Diagram Test Started ***************************************************************
+# 
+# [980] ************************************************************* Retrain Entry triggered by (SW) Started *************************************************************
+# 
+# [1310] **************************************************************** Retrain Entry Succeeded ****************************************************************
+# 
+# [1310] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [1850] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [1850] ***************************************************************** Retrain Flow Diagram Test Succeeded ***************************************************************
+# 
+# [1850] ***************************************************************** LinkReset Flow Diagram Test Started ***************************************************************
+# 
+# [1850] ******************************************************** LinkReset Entry triggered by (Protocol) Started ********************************************************
+# 
+# [2360] **************************************************************** LinkReset Entry Succeeded ****************************************************************
+# 
+# [2360] ************************************************************* LinkReset Entry triggered by (Protocol) Started *************************************************************
+# 
+# [2990] ****************************************************************  ACTIVE Entry Succeeded ****************************************************************
+# 
+# [2990] ***************************************************************** LinkReset Flow Diagram Test Succeeded ***************************************************************
+# 
+# [2990] ***************************************************************** LinkError Flow Diagram Test Started ***************************************************************
+# 
+# [2990] ********************************************** LinkError Entry triggered by (SW - UCIe_Start_Link_Training 0->1) Started **********************************************
+# 
+# [3070] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [3170] ************************************************************* Active Entry triggered by (Protocol) Started *************************************************************
+# 
+# [3690] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [3690] ****************************************************** LinkError Entry triggered by (ADVCAP MisMatch) Started ******************************************************
+# 
+# [6170] **************************************************************** LinkError Entry Succeeded ****************************************************************
+# 
+# [7940] ************************************************************* Active Entry triggered by (SW) Started *************************************************************
+# 
+# [8470] **************************************************************** Active Entry Succeeded ****************************************************************
+# 
+# [8470] ***************************************************************** LinkError Flow Diagram Test Succeeded ***************************************************************
+# 
+# ****************************** NUMBER OF PASSED TESTS = 4 *************************************
+# ** Note: $stop    : ./TB/UCIE_ctl_DUT2DUT_tb.sv(983)
+#    Time: 8480 ns  Iteration: 1  Instance: /UCIE_ctl_DUT2DUT_tb
+# Break in Module UCIE_ctl_DUT2DUT_tb at ./TB/UCIE_ctl_DUT2DUT_tb.sv line 983
+# Causality operation skipped due to absence of debug database file

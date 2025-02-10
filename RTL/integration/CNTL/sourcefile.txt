@@ -1,0 +1,6 @@
+./CNTL/Pulse_Gen.v
+./CNTL/Pulse_Gen_2_Edges.v
+./CNTL/Timer.v
+./CNTL/UCIE_ctl_CNTL.v
+./CNTL/UCIE_ctl_CNTL_FSM.v
+./CNTL/UCIE_ctl_Logging_FSM.v

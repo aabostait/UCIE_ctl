@@ -1,0 +1,2 @@
+./TOP/UCIE_ctl_TOP.sv
+./TOP/UCIE_ctl_TOP_DUT2DUT.sv
